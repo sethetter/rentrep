@@ -9,6 +9,9 @@ body {
     background: #fff;
     color: #222;
     line-height: 1.6;
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 img {
     max-width: 100%;
@@ -73,7 +76,7 @@ p, ul {
     background: transparent;
 }
 .nav-toggle.close .lines:before, 
-.nav-toggle.close .lines:after{
+.nav-toggle.close .lines:after {
   -webkit-transform-origin: center center;
   top: 0;
   margin: -1px; // Fix for Android Stock Browser
@@ -119,6 +122,31 @@ p, ul {
     margin: 0;
     font-size: 0;
 }
+.nav-head.close {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.zone-head {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    background: #fff;
+}
+.form-home {
+    position: fixed;
+    left: 30%;
+    top: 40%;
+    width: 40%;
+}
 
 /* Buttons */
 .btn {
@@ -137,6 +165,7 @@ p, ul {
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
+    background-color: #e8e8e;
 }
 .btn-block {
     display: block;
@@ -161,6 +190,9 @@ p, ul {
     margin-bottom: 1em;
     position: relative;
 }
+.form-login .form-group {
+    margin-bottom: 2px;
+}
 .form-label {
     line-height: 1;
     display: block;
@@ -184,6 +216,22 @@ p, ul {
     box-shadow: inset 0px 1px 4px rgba(0,0,0,0.1), 0px 0px 0px 7px rgba(204,204,204,0);
     -webkit-transition: border 0.3s, box-shadow 0.3s;
     -transition: border 0.3s, box-shadow 0.3s;
+}
+
+.login-dropdown {
+    position: relative;
+}
+.login-menu {
+    position: relative;
+    top: 100%;
+    right: 0;
+    padding: 1em;
+    background: #e8e8e8;
+    z-index: 100;
+    min-width: 180px;
+}
+.login-menu.open {
+    display: block;
 }
 
 /* Tables */
@@ -261,7 +309,6 @@ p, ul {
 .unit1-lg,.unit2-lg,.unit3-lg,.unit4-lg,.unit5-lg,.unit6-lg,.unit7-lg,.unit8-lg,.unit9-lg,.unit10-lg,.unit11-lg,.unit12-lg {
     display: block;
     width: 100%;
-    height: auto;
     min-height: 1px;
     padding-left: 1em;
     padding-right: 1em;
@@ -319,7 +366,16 @@ p, ul {
     .nav-toggle {
         display: none;
     }
-
+    .zone-head .nav-head {
+        border: 0;
+        clip: none;
+        height: auto;
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+        position: static;
+        width: auto;
+    }
     .logo-head {
         float: left;
     }
@@ -345,6 +401,35 @@ p, ul {
     .unit9-lg { width: 75% }
     .unit10-lg { width: 83.3333333333333% }
     .unit11-lg { width: 91.6666666666666% }
+}
+
+/* Home */
+.container-window {
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    padding: 0;
+}
+.container-window-left {
+    left: 0;
+}
+.container-window-right {
+    left: 50%;
+}
+.background-tenant {
+    width: 100%;
+    height: 100%;
+    background-image: url(http://placehold.it/800x800/0000FF&text=TENANT);
+    background-position: 50% 50%;
+    background-size: cover;
+}
+.background-landlord {
+    width: 100%;
+    height: 100%;
+    background-image: url(http://placehold.it/800x800/FF0000/&text=LANDLORD);
+    background-position: 50% 50%;
+    background-size: cover;
 }
 
 @media print,
