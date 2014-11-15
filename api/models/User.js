@@ -5,6 +5,7 @@ var User = {
   schema: true,
 
   attributes: {
+
     email: {
       type: 'email',
       unique: true,
@@ -18,6 +19,10 @@ var User = {
       type: 'string',
       required: true
     },
+
+    tenant: { model: 'tenant' },
+    landlord: { model: 'landlord' },
+
     toJSON: function() {
       var user = this.toObject();
       delete user.password;
