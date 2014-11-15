@@ -7,12 +7,20 @@
 
 module.exports = {
 
-  create: function(req, res) {},
+  create: function(req, res) {
+    Property.create({
+    }).exec(function(err, property) {
+      if (err) return res.error('There was a problem creating your property.');
+
+      req.flash('success', 'Property created!');
+      res.redirect('/property/' + property.id);
+    });
+  },
 
   /**
    * View a single property
    */
-  view: function(req, res) {
+  show: function(req, res) {
 
     Property.findOne({
       id: req.params.propertyId
