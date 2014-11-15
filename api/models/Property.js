@@ -65,6 +65,11 @@ module.exports = {
     },
     utilities: {
       type: 'text'
+    },
+
+    landlord: {
+      model: 'landlord',
+      required: true
     }
   }
 };
