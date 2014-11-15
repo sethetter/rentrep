@@ -15,8 +15,29 @@ module.exports = {
   },
 
   create: function(req, res) {
+    console.log('-'*100);
+    console.log(req.body);
+    console.log('-'*100);
     Property.create({
+      streetAddress: req.body.streetAddress,
+      city: req.body.city,
+      state: req.body.state,
+      zip: parseInt(req.body.zip),
+      sqFootage: parseInt(req.body.sqFootage),
+      price: parseInt(req.body.price),
+      deposit: parseInt(req.body.deposit),
+      pets: req.body.pets,
+      petDeposit: parseInt(req.body.petDeposit),
+      parking: req.body.parking,
+      bedrooms: parseInt(req.body.bedrooms),
+      bathrooms: parseInt(req.body.bathrooms),
+      appliances: req.body.appliances,
+      description: req.body.description,
+      amenities: req.body.amenities,
+      utilities: req.body.utilities,
+      landlord: req.session.user.landlord.id
     }).exec(function(err, property) {
+      console.log(err);
       if (err) return res.error('There was a problem creating your property.');
 
       req.flash('success', 'Property created!');

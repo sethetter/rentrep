@@ -25,15 +25,15 @@ module.exports = {
       required: true
     },
     sqFootage: {
-      type: 'number',
+      type: 'integer',
       required: true
     },
     price: {
-      type: 'number',
+      type: 'integer',
       required: true
     },
     deposit: {
-      type: 'number',
+      type: 'integer',
       required: true
     },
     pets: {
@@ -41,17 +41,17 @@ module.exports = {
       required: true
     },
     petDeposit: {
-      type: 'number'
+      type: 'integer'
     },
     parking: {
       type: 'string'
     },
     bedrooms: {
-      type: 'number',
+      type: 'integer',
       required: true
     },
     bathrooms: {
-      type: 'number',
+      type: 'integer',
       required: true
     },
     appliances: {
