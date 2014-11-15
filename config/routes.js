@@ -32,17 +32,19 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'home'
-  },
+  '/': { view: 'home' },
 
-  'get /register': {
-    view: 'register'
-  },
+  // Register view routes
+  'get /tenant/register': { view: 'tenant/register' },
+  'get /landlord/register': { view: 'landlord/register' },
 
-  'post /login': 'AuthController.login',
+  // Create user reords
+  'post /tenant': 'TenantController.create',
+  'post /landlord': 'LandlordController.create',
 
-  'post /user': 'UserController.create'
+  // Sessions
+  'post /login': 'SessionController.login',
+  'get /logout': 'SessionController.logout'
 
   /***************************************************************************
   *                                                                          *
