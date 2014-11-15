@@ -43,6 +43,7 @@ module.exports.routes = {
   'post /landlord': 'LandlordController.create',
 
   // Sessions
+  'get /login': { view: 'login' },
   'post /login': 'SessionController.login',
   'get /logout': 'SessionController.logout'
 

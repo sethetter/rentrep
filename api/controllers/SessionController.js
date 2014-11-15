@@ -5,21 +5,23 @@
  * @help        :: See http://links.sailsjs.org/docs/controllers
  */
 
+var bcrypt = require('bcrypt');
+
 module.exports = {
 
   login: function(req, res) {
     var backURL = req.header('Referer') || '/';
 
     User.findOne({
-      email: req.params.email
+      email: req.body.email
     }).exec(function(err, user) {
       if (err) {
         req.flash('error', 'Unable to find user for that email address.');
         return res.redirect(backURL);
       }
 
-      bcrypt.compare(req.params.password, user.password, function(err, res) {
-        if (!res) {
+      bcrypt.compare(req.body.password, user.password, function(err, result) {
+        if (!result) {
           req.flash('error', 'Invalid password.');
           return res.redirect(backURL);
         }
