@@ -4,26 +4,43 @@
     <title>Rental Karma</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Rental Karma</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <link rel="stylesheet" href="/styles/normalize.css">
+        <link rel="stylesheet" href="/styles/main.css">
+        <link rel="stylesheet" href="/styles/flexslider.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+        <script src="/js/modules.js"></script>
   </head>
 
   <body>
-  <!--[if lt IE 8]>
-      <div class="alert alert-error">Oh god we have a <strong>serious</strong> problem! Your browser is <strong>outdated</strong>. Please <a href="http://browsehappy.com/">upgrade your browser</a>. Do it for you! If you can't, harass who can do it for you.</div>
-  <![endif]-->
+    <!--[if lt IE 8]>
+        <div class="alert alert-error">Oh god we have a <strong>serious</strong> problem! Your browser is <strong>outdated</strong>. Please <a href="http://browsehappy.com/">upgrade your browser</a>. Do it for you! If you can't, harass who can do it for you.</div>
+    <![endif]-->
+
+    <div class="zone zone-head"> 
+      <div class="core core-head">
+          <h1 class="logo-head"><a class="icon icon-logo" href="/">Rental Karma</a></h1>
+          <div class="nav nav-head">
+            <div class="menu menu-head">
+                <li><a href="">Map</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Whatever</a></li>
+                <li><a href="">Contact</a></li>
+            </div>
+          </div>
+      </div>
+    </div>
 
     <% ['error', 'success'].forEach(function(type) { %>
       <% req.flash(type).forEach(function(msg) { %>
-        <div class="alert alert-<%= type === 'error' ? 'danger' : 'success' %>">
+        <div class="alert alert-<%= type === 'error' ? 'error' : 'success' %>">
           <p><%= msg %></p>
         </div>
       <% }) %>
@@ -31,9 +48,11 @@
 
     <%- body %>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
-    <script src="/js/main.js"></script>
+    <div class="zone zone-foot">
+      <div class="core core-foot">
+      </div>
+    </div>
+
     <script src="/js/dependencies/sails.io.js"></script>
   </body>
 </html>
