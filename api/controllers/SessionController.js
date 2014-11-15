@@ -30,7 +30,7 @@ module.exports = {
         req.session.authenticated = true;
         req.flash('success', 'Successfully logged in.');
 
-        return res.redirect(backURL);
+        return res.redirect(user.type === 'landlord' ? '/landlord/home' : '/tenant/home');
       });
 
 
