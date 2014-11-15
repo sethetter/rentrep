@@ -45,7 +45,13 @@ module.exports.routes = {
   // Sessions
   'get /login': { view: 'login' },
   'post /login': 'SessionController.login',
-  'get /logout': 'SessionController.logout'
+  'get /logout': 'SessionController.logout',
+
+  // Tenant routes
+  'get /tenant/home': { view: 'tenant/home' },
+
+  // Landlord routes
+  'get /landlord/home': { view: 'landlord/home' }
 
   /***************************************************************************
   *                                                                          *
