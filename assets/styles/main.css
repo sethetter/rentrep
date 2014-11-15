@@ -136,6 +136,10 @@ p, ul {
     border: 1px solid transparent;
     border-radius: 4px;
 }
+.btn-block {
+    display: block;
+    width: 100%;
+}
 
 /* Text */
 .pull-left {
@@ -149,12 +153,14 @@ p, ul {
     margin-bottom: 1em;
 }
 
-// Forms
+/* Forms */
 .form-group {
     display: block;
     margin-bottom: 1em;
+    position: relative;
 }
 .form-label {
+    line-height: 1;
     display: block;
     position: absolute;
     top: .5em;
@@ -168,7 +174,7 @@ p, ul {
     display: block;
     width: 100%;
     background: #fff;
-    padding: 1em;
+    padding: .5em 1em;
     outline: 0;
     border: 1px solid #b8b8b8;
     box-shadow: inset 0px 1px 4px rgba(0,0,0,0.1), 0px 0px 0px 7px rgba(204,204,204,0);
