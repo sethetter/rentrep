@@ -20,8 +20,8 @@ module.exports = {
         return res.redirect(backURL);
       }
 
-      bcrypt.compare(req.body.password, user.password, function(err, res) {
-        if (!res) {
+      bcrypt.compare(req.body.password, user.password, function(err, result) {
+        if (!resulr) {
           req.flash('error', 'Invalid password.');
           return res.redirect(backURL);
         }
