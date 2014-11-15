@@ -21,7 +21,7 @@ module.exports = {
       }
 
       bcrypt.compare(req.body.password, user.password, function(err, result) {
-        if (!resulr) {
+        if (!result) {
           req.flash('error', 'Invalid password.');
           return res.redirect(backURL);
         }
