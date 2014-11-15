@@ -25,7 +25,7 @@ var User = {
     }
   },
 
-  beforeUpdate: function(values, next) {
+  beforeCreate: function(values, next) {
 
     // Are we providing / updating password?
     if (values.password) {
