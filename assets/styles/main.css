@@ -1,6 +1,6 @@
-// Opinionated Defaults
+/* Defaults */
 * {
-    @include box-sizing(border-box);
+    -webkit-box-sizing: border-box;
 }
 
 body {
@@ -10,8 +10,23 @@ body {
     color: #222;
     line-height: 1.6;
 }
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;   
+    margin-bottom: 8px;
+}
+p, ul {
+    margin: 0 1.5em;
+}
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
 
-.inner {
+.core {
     max-width: 1024px;
     margin: 0 auto;
     padding: 0 1em;
@@ -23,7 +38,7 @@ body {
     margin: 0;
 }
 
-// Alerts
+/* Alerts */
 .alert {
     margin-bottom: 1em;
     padding: .4em .8em;
@@ -35,7 +50,7 @@ body {
     background: #b8b8b8;
 }
 
-// Navigation
+/* Navigation */
 .nav-toggle {
     position: absolute;
     right: 1em;
@@ -90,9 +105,9 @@ body {
     -webkit-transform-origin: 1em center;
 }
 .lines:before { top: .25em; }
-.lines:after { top: -.25; }
+.lines:after { top: -.25em; }
 
-// Buttons
+/* Buttons */
 .btn {
     display: inline-block;
     padding: .4em .8em;
@@ -111,22 +126,7 @@ body {
     border-radius: 4px;
 }
 
-// Text
-h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;   
-    margin-bottom: 8px;
-}
-p, ul {
-    margin: 0 1.5em;
-}
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
+/* Text */
 .pull-left {
     float: left;
     margin-right: 1.5em;
@@ -136,6 +136,10 @@ p, ul {
     float: left;
     margin-left: 1.5em;
     margin-bottom: 1em;
+}
+
+.logo-head {
+    margin: 0;
 }
 
 // Forms
@@ -164,13 +168,13 @@ p, ul {
     -webkit-transition: border 0.3s, box-shadow 0.3s;
 }
 
-// Tables
+/* Tables */
 .table-container {
     max-width: 100%;
     overflow: hidden;
 }
 
-// Helper classes
+/* Helper classes */
 .clearfix:before,
 .clearfix:after {
     content: ' ';
@@ -180,7 +184,16 @@ p, ul {
     clear: both;
 }
 
-// Icons
+.icon,
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+/* Icons */
 .icon {
     display: inline-block;
     vertical-align: middle;
@@ -191,15 +204,6 @@ p, ul {
     background-image: url(../images/sprites/icon-logo.gif);
     width: 48px;
     height: 48px;
-}
-
-.icon,
-.text-hide {
-    font: 0/0 a;
-    color: transparent;
-    text-shadow: none;
-    background-color: transparent;
-    border: 0
 }
 .hidden {
     display: none !important;
