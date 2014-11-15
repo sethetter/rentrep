@@ -12,7 +12,7 @@ module.exports = {
   login: function(req, res) {
     User.findOne({
       email: req.body.email
-    }).exec(function(err, user) {
+    }).populate('landlord').populate('tenant').exec(function(err, user) {
       if (err || !user) return res.error('Unable to find user for that email address.');
 
       bcrypt.compare(req.body.password, user.password, function(err, result) {
