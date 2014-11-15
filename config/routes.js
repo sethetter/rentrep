@@ -33,12 +33,14 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
-    view: 'homepage'
+    view: 'home'
   },
 
   'get /register': {
     view: 'register'
   },
+
+  'post /login': 'AuthController.login',
 
   'post /user': 'UserController.create'
 
