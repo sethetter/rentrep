@@ -29,22 +29,26 @@
           <h1 class="logo-head"><a class="icon icon-logo" href="/">Rental Karma</a></h1>
           <button class="nav-toggle" type="button" role="button" aria-label="Toggle Navigation"><span class="lines"></span></button>
           <div class="nav nav-head clearfix">
-            <div class="login-dropdown">
-              <a class="btn btn-submit login-toggle" href="#">Login</a>
-                <div class="login-menu">
-                  <form class="form-login" action="/login" method="post">
-                    <div class="form-group">
-                      <label for="email" class="form-label">Email</label>
-                      <input type="email" id="email" class="form-control" name="email" required />
-                    </div>
-                    <div class="form-group">
-                      <label for="password" class="form-label">Password</label>
-                      <input type="password" id="password" class="form-control" name="password" required />
-                    </div>
-                    <button class="btn btn-block" type="submit">Login</button>
-                  </form>
+
+            <% if (!req.session.authenticated) { %>
+              <div class="login-dropdown">
+                <a class="btn btn-submit login-toggle" href="#">Login</a>
+                  <div class="login-menu">
+                    <form class="form-login" action="/login" method="post">
+                      <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-control" name="email" required />
+                      </div>
+                      <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" class="form-control" name="password" required />
+                      </div>
+                      <button class="btn btn-block" type="submit">Login</button>
+                    </form>
+                  </div>
                 </div>
-              </div>
+              <% } %>
+
           </div>
       </div>
     </div>

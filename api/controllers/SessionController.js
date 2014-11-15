@@ -13,7 +13,7 @@ module.exports = {
     User.findOne({
       email: req.body.email
     }).exec(function(err, user) {
-      if (err) return res.error('Unable to find user for that email address.');
+      if (err || !user) return res.error('Unable to find user for that email address.');
 
       bcrypt.compare(req.body.password, user.password, function(err, result) {
         if (!result) return res.error('Invalid password.');
