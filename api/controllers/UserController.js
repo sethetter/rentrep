@@ -16,11 +16,11 @@ module.exports = {
     }).exec(function(err, user) {
       if (err) {
         req.flash('err', err.message);
-        return res.view('users/register');
+        return res.view('register');
       }
 
       req.flash('success', 'Account created!');
-      return res.view('homepage');
+      return res.view('home');
     });
   }
 
