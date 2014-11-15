@@ -10,6 +10,12 @@ body {
     color: #222;
     line-height: 1.6;
 }
+img {
+    max-width: 100%;
+}
+a {
+    text-decoration: none;
+}
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;   
     margin-bottom: 8px;
@@ -107,6 +113,11 @@ p, ul {
 .lines:before { top: .25em; }
 .lines:after { top: -.25em; }
 
+.logo-head {
+    margin: 0;
+    font-size: 0;
+}
+
 /* Buttons */
 .btn {
     display: inline-block;
@@ -136,10 +147,6 @@ p, ul {
     float: left;
     margin-left: 1.5em;
     margin-bottom: 1em;
-}
-
-.logo-head {
-    margin: 0;
 }
 
 // Forms
@@ -300,6 +307,16 @@ p, ul {
 @media only screen and (min-width: 1024px) {
     .nav-toggle {
         display: none;
+    }
+
+    .logo-head {
+        float: left;
+    }
+    .nav-head {
+        float: right;
+    }
+    .menu-head li {
+        display: inline-block;
     }
 
     .unit1-lg,.unit2-lg,.unit3-lg,.unit4-lg,.unit5-lg,.unit6-lg,.unit7-lg,.unit8-lg,.unit9-lg,.unit10-lg,.unit11-lg,.unit12-lg {
