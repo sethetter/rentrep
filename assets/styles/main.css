@@ -1,0 +1,282 @@
+// Alerts
+.alert {
+    margin-bottom: 1em;
+    padding: .4em .8em;
+}
+.alert-success {
+    background: #b8b8b8;
+}
+.alert-error {
+    background: #b8b8b8;
+}
+
+// Navigation
+.nav-toggle {
+    position: absolute;
+    right: 1em;
+    top: 14px;
+    display: inline-block;
+    -webkit-transition: .3s;
+    cursor: pointer;
+    user-select: none; 
+    background: transparent;
+    border: 0;
+}
+.nav-toggle.close .lines{
+    background: transparent;
+}
+.nav-toggle.close .lines:before, 
+.nav-toggle.close .lines:after{
+  -webkit-transform-origin: center center;
+  top: 0;
+  margin: -1px; // Fix for Android Stock Browser
+  width: 2em;
+}
+.nav-toggle.close .lines:before{
+  -webkit-transform: rotate3d(0,0,1,45deg);
+}
+.nav-toggle.close .lines:after{
+  -webkit-transform: rotate3d(0,0,1,-45deg);
+}
+.nav-toggle:focus {
+    outline: none;
+}
+.nav-toggle:hover {
+    opacity: 1;
+}
+.lines {
+    display: inline-block;
+    width: 2em;
+    height: 1em;
+    background: #000;
+    -webkit-transition: .3s;
+    position: relative; 
+}
+.lines:before, 
+.lines:after {
+content: ' ';
+    display: inline-block;
+    width: 2em;
+    height: 1em;
+    background: #000;
+    -webkit-transition: .3s;
+    position: absolute;
+    left:0;
+    -webkit-transform-origin: 1em center;
+}
+.lines:before { top: .25em; }
+.lines:after { top: -.25; }
+
+// Icons
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: inherit;
+    position: relative;
+}
+
+// Buttons
+.btn {
+    display: inline-block;
+    padding: .4em .8em;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+// Text
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;   
+    margin-bottom: .5em;
+}
+p, ul {
+    margin: 0 1.5em;
+}
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+.pull-left {
+    float: left;
+    margin-right: 1.5em;
+    margin-bottom: 1em;
+}
+.pull-right {
+    float: left;
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+}
+
+// Forms
+.form-group {
+    display: block;
+    margin-bottom: 1em;
+}
+.form-label {
+    display: block;
+    position: absolute;
+    top: .5em;
+    left: 1em;
+}
+.filled .form-label {
+    opacity: 0;
+    visibility: hidden;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    background: #fff;
+    padding: 1em;
+    outline: 0;
+    border: 1px solid #b8b8b8;
+    box-shadow: inset 0px 1px 4px rgba(0,0,0,0.1), 0px 0px 0px 7px rgba(204,204,204,0);
+    -webkit-transition: border 0.3s, box-shadow 0.3s;
+}
+
+// Tables
+.table-container {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+// Helper classes
+.clearfix:before,
+.clearfix:after {
+    content: ' ';
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.icon,
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0
+}
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+.sr-only {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+.invisible {
+    visibility: hidden;
+}
+
+@media only screen and (min-width: 35em) {
+    .nav-toggle {
+        display: none;
+    }
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
