@@ -36,15 +36,14 @@ $(function(){
 	    $toggle: $('.login-toggle'),
 	    showClass: 'open',
 	    init: function() {
+	    	var _this = this;
 	        this.$toggle.click(function() {
-	            $(this).toggleClass(this.showClass);
+	            $(this).parent().toggleClass(_this.showClass);
 	            return false;
 	        });
 	    }
 	};
 	mobilelogin.init();
-
-
 
 	$(document).on('keydown paste focus click', '.form-control', function () {
 		$(this).parent('.form-group').addClass('filled');
