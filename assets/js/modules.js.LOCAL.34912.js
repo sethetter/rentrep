@@ -31,21 +31,6 @@ $(function(){
     });
   }, 1000);
 
-	var mobilelogin = {
-	    $login: $('.login-dropdown'),
-	    $toggle: $('.login-toggle'),
-	    showClass: 'open',
-	    init: function() {
-	        this.$toggle.click(function() {
-	            $(this).toggleClass(this.showClass);
-	            return false;
-	        });
-	    }
-	};
-	mobilelogin.init();
-
-
-
 	$(document).on('keydown paste focus click', '.form-control', function () {
 		$(this).parent('.form-group').addClass('filled');
 	});

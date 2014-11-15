@@ -22,6 +22,7 @@ $(function(){
 	};
 	mobileNav.init();
 
+<<<<<<< Updated upstream
   // Check for initial form values filled in, race condition, awesome..
   setTimeout(function() {
     $('.form-control').each(function() {
@@ -30,7 +31,7 @@ $(function(){
       }
     });
   }, 1000);
-
+=======
 	var mobilelogin = {
 	    $login: $('.login-dropdown'),
 	    $toggle: $('.login-toggle'),
@@ -45,6 +46,7 @@ $(function(){
 	mobilelogin.init();
 
 
+>>>>>>> Stashed changes
 
 	$(document).on('keydown paste focus click', '.form-control', function () {
 		$(this).parent('.form-group').addClass('filled');

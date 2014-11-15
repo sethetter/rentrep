@@ -222,7 +222,7 @@ p, ul {
     position: relative;
 }
 .login-menu {
-    position: relative;
+    position: absolute;
     top: 100%;
     right: 0;
     padding: 1em;
@@ -368,10 +368,10 @@ p, ul {
     }
     .zone-head .nav-head {
         border: 0;
-        clip: none;
+        clip: auto;
         height: auto;
         margin: 0;
-        overflow: hidden;
+        overflow: visible;
         padding: 0;
         position: static;
         width: auto;
@@ -420,14 +420,14 @@ p, ul {
 .background-tenant {
     width: 100%;
     height: 100%;
-    background-image: url(http://placehold.it/800x800/0000FF&text=TENANT);
+    background-image: url(../images/background-tenant.jpg);
     background-position: 50% 50%;
     background-size: cover;
 }
 .background-landlord {
     width: 100%;
     height: 100%;
-    background-image: url(http://placehold.it/800x800/FF0000/&text=LANDLORD);
+    background-image: url(../images/background-landlord.jpg);
     background-position: 50% 50%;
     background-size: cover;
 }

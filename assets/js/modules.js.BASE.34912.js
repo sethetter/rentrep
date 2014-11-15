@@ -22,30 +22,6 @@ $(function(){
 	};
 	mobileNav.init();
 
-  // Check for initial form values filled in, race condition, awesome..
-  setTimeout(function() {
-    $('.form-control').each(function() {
-      if (this.value !== '') {
-        $(this).parent('.form-group').addClass('filled');
-      }
-    });
-  }, 1000);
-
-	var mobilelogin = {
-	    $login: $('.login-dropdown'),
-	    $toggle: $('.login-toggle'),
-	    showClass: 'open',
-	    init: function() {
-	        this.$toggle.click(function() {
-	            $(this).toggleClass(this.showClass);
-	            return false;
-	        });
-	    }
-	};
-	mobilelogin.init();
-
-
-
 	$(document).on('keydown paste focus click', '.form-control', function () {
 		$(this).parent('.form-group').addClass('filled');
 	});
@@ -67,7 +43,7 @@ var RK_MODULES = window.RK_MODULES || {};
 
 RK_MODULES.flexslider = function() {
 	$('.slider').flexslider({
-		animation: 'slide',
+		animation: 'slide', 
 		directionNav: false,
 	    controlNav: false
 	});
