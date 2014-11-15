@@ -19,7 +19,6 @@ module.exports = {
       type: req.body.type
     }).exec(function(err, user) {
       if (err) {
-        console.log(err);
         req.flash('error', 'There was an error creating your account.');
         // TODO: this will be landlord specific register
         return res.view('register');
@@ -32,7 +31,6 @@ module.exports = {
         lastName: req.body.lastname
       }).exec(function(err, landlord) {
         if (err) {
-          console.log(err);
           req.flash('error', 'There was an error creating your account.');
           // TODO: this will be landlord specific register
           return res.view('register');
