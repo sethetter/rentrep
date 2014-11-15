@@ -29,7 +29,7 @@ module.exports = {
         if (err) return res.error('There was an error creating your account.');
 
         User.update({ id: user.id }, { landlord: landlord.id }, function(err, user) {
-          if (err) res.error('There was an error creating your account.');
+          if (err) return res.error('There was an error creating your account.');
 
           req.flash('success', 'Account created!');
 
