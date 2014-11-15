@@ -18,11 +18,7 @@ module.exports = {
       password: req.body.password,
       type: req.body.type
     }).exec(function(err, user) {
-      if (err) {
-        req.flash('error', 'There was an error creating your account.');
-        // TODO: this will be landlord specific register
-        return res.view('register');
-      }
+      if (err) return res.error('There was an error creating your account.');
 
       // User created, now create the landlord
       Landlord.create({
@@ -30,15 +26,11 @@ module.exports = {
         firstName: req.body.firstname,
         lastName: req.body.lastname
       }).exec(function(err, landlord) {
-        if (err) {
-          req.flash('error', 'There was an error creating your account.');
-          // TODO: this will be landlord specific register
-          return res.view('register');
-        }
+        if (err) return res.error('There was an error creating your account.');
 
         // TODO: this should probably log them in and send to landlord homepage
         req.flash('success', 'Account created!');
-        return res.view('home');
+        return res.redirect('/');
       });
 
     });
@@ -52,21 +44,11 @@ module.exports = {
     Landlord.findOne({
       id: req.params.landlordId
     }).exec(function(err, landlord) {
-      if (err) {
-        var backURL = req.header('Referer') || '/';
-        req.flash('error', 'There was a problem finding specified landlord');
-        req.redirect(backURL);
-      }
-    });
-  },
+      if (err) return res.error('Problem finding specified landlord.');
 
-  /**
-   * Landlord homepage
-   */
-  home: function(req, res) {
-    if (!req.user) {
-      return
-    }
+      return res.view('landlord/show', { landlord: landlord });
+    });
   }
+
 };
 
