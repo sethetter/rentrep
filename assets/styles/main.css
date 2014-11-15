@@ -199,7 +199,7 @@ p, ul {
     display: block;
     position: absolute;
     top: .5em;
-    left: 1em;
+    left: .5em;
 }
 .filled .form-label {
     opacity: 0;
@@ -211,7 +211,7 @@ p, ul {
     display: block;
     width: 100%;
     background: #fff;
-    padding: .5em 1em;
+    padding: .5em;
     outline: 0;
     border: 1px solid #b8b8b8;
     box-shadow: inset 0px 1px 4px rgba(0,0,0,0.1), 0px 0px 0px 7px rgba(204,204,204,0);
@@ -230,9 +230,16 @@ p, ul {
     background: #e8e8e8;
     z-index: 100;
     min-width: 180px;
+    display: none;
 }
-.login-menu.open {
+.login-link {
+    line-height: 1.1;
+}
+.open .login-menu {
     display: block;
+}
+.open .login-toggle {
+    background: #e8e8e8;
 }
 
 /* Tables */

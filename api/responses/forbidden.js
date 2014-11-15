@@ -9,14 +9,14 @@
 module.exports = function forbidden (message, options) {
 
   // Get access to `req`, `res`, & `sails`
-  var backURL = req.header('referrer') || '/';
   var req = this.req;
   var res = this.res;
+  var backURL = req.header('referrer') || '/';
 
   // Set status code
   res.status(403);
 
   req.flash('error', message);
-  res.redirct(backURL);
+  res.redirect(backURL);
 };
 

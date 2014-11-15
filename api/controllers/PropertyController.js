@@ -7,6 +7,13 @@
 
 module.exports = {
 
+  /**
+   * View route, for new property
+   */
+  new: function(req, res) {
+    return res.view('property/new');
+  },
+
   create: function(req, res) {
     Property.create({
     }).exec(function(err, property) {

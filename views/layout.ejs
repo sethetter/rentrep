@@ -47,11 +47,14 @@
                     </form>
                   </div>
                 </div>
+              <% } else { %>
+                <a class="btn btn-submit" href="/logout">Logout</a>
               <% } %>
 
-          </div>
+            </div>
+        </div>
+
       </div>
-    </div>
 
     <% ['error', 'success'].forEach(function(type) { %>
       <% req.flash(type).forEach(function(msg) { %>

@@ -54,6 +54,8 @@ module.exports.routes = {
   'get /landlord/home': { view: 'landlord/home' },
 
   // Property routes
+  'get /property/new': 'PropertyController.new',
+  'post /property': 'PropertyController.create',
   'get /property/:propertyId': 'PropertyController.show'
 
   /***************************************************************************
