@@ -21,6 +21,14 @@
       <div class="alert alert-error">Oh god we have a <strong>serious</strong> problem! Your browser is <strong>outdated</strong>. Please <a href="http://browsehappy.com/">upgrade your browser</a>. Do it for you! If you can't, harass who can do it for you.</div>
   <![endif]-->
 
+    <% ['error', 'success'].forEach(function(type) { %>
+      <% req.flash(type).forEach(function(msg) { %>
+        <div class="alert alert-<%= type === 'error' ? 'danger' : 'success' %>">
+          <p><%= msg %></p>
+        </div>
+      <% }) %>
+    <% }) %>
+
     <%- body %>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
