@@ -13,14 +13,14 @@ module.exports = {
     var backURL = req.header('Referer') || '/';
 
     User.findOne({
-      email: req.params.email
+      email: req.body.email
     }).exec(function(err, user) {
       if (err) {
         req.flash('error', 'Unable to find user for that email address.');
         return res.redirect(backURL);
       }
 
-      bcrypt.compare(req.params.password, user.password, function(err, res) {
+      bcrypt.compare(req.body.password, user.password, function(err, res) {
         if (!res) {
           req.flash('error', 'Invalid password.');
           return res.redirect(backURL);
