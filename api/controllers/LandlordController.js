@@ -28,9 +28,14 @@ module.exports = {
       }).exec(function(err, landlord) {
         if (err) return res.error('There was an error creating your account.');
 
-        // TODO: this should probably log them in and send to landlord homepage
-        req.flash('success', 'Account created!');
-        return res.redirect('/');
+        User.update({ id: user.id }, { landlord: landlord.id }, function(err, user) {
+          if (err) res.error('There was an error creating your account.');
+
+          req.flash('success', 'Account created!');
+
+          return res.redirect('/');
+        });
+
       });
 
     });
