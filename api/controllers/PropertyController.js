@@ -21,7 +21,7 @@ module.exports = {
 
       return res.view('property/show', { property: property });
     });
-  }
+  },
 
   /**
    * List all properties
