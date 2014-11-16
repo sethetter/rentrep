@@ -12,7 +12,9 @@ module.exports = {
 
     Property.find({
       landlord: landlordId
-    }).exec(function(err, properties) {
+    }).populate('applications').exec(function(err, properties) {
+      if (err) return res.error('Error retrieving landlord properties.');
+
       return res.view('landlord/home', { properties: properties });
     });
   },

@@ -48,10 +48,18 @@ module.exports = {
 
     Property.findOne({
       id: req.params.propertyId
-    }).exec(function(err, property) {
+    }).populate('landlord').exec(function(err, property) {
       if (err || !property) return res.error('There was a problem finding specificed property.');
 
-      return res.view('property/show', { property: property });
+      if (property.landlord.id === req.session.user.landlord.id) {
+        Application.find({ property: property.id })
+        .populate('tenant').exec(function(err, applications) {
+          return res.view('property/show', { property: property, applications: applications });
+        });
+      } else {
+          return res.view('property/show', { property: property });
+      }
+
     });
   },
 

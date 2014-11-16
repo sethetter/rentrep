@@ -61,7 +61,8 @@ module.exports.routes = {
 
   // Applications
   'get /property/:propertyId/application/new': 'ApplicationController.new',
-  'post /property/:propertyId/application': 'ApplicationController.create'
+  'post /property/:propertyId/application': 'ApplicationController.create',
+  'get /property/:propertyId/application/:applicationId': 'ApplicationController.show'
 
   /***************************************************************************
   *                                                                          *
