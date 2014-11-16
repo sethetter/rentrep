@@ -10,10 +10,21 @@ module.exports = {
   home: function(req, res) {
     var landlordId = req.session.user.landlord.id;
 
-    Property.find({
-      landlord: landlordId
-    }).exec(function(err, properties) {
-      return res.view('landlord/home', { properties: properties });
+    Application.find({ landlord: landlordId })
+    .populate('tenant').populate('property')
+    .exec(function(err, applications) {
+      if (err) return res.error('Error retrieving landlord applications.');
+
+      Property.find({
+        landlord: landlordId
+      }).exec(function(err, properties) {
+        if (err) return res.error('Error retrieving landlord properties.');
+
+        return res.view('landlord/home', {
+          applications: applications,
+          properties: properties
+        });
+      });
     });
   },
 

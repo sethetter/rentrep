@@ -70,6 +70,11 @@ module.exports = {
       required: true
     },
 
+    landlord: {
+      model: 'landlord',
+      required: true
+    },
+
     coApplications: {
       collection: 'coApplication',
       via: 'application'

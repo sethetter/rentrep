@@ -36,5 +36,12 @@
       <% }) %>
 
 		</div><!-- .grid-listing -->
+    <div class="applications">
+      <h2 class="listing-title">My Applications</h2>
+      <% applications.forEach(function(application) { %>
+        <p><strong><%= application.property.streetAddress %>, <%= application.property.zip %></strong></p>
+        <p><%= application.tenant.firstName %> <%= application.tenant.lastName %></p>
+      <% }) %>
+    </div>
 	</div>
 </div>

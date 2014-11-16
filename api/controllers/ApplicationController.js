@@ -22,58 +22,65 @@ module.exports = {
     var propertyId = req.params.propertyId;
     var tenantId = req.session.user.tenant.id;
 
-    Application.create({
-      property: propertyId,
-      tenant: tenantId,
+    Property.findOne({ id: propertyId }).populate('landlord').exec(function(err, property) {
+      if (err) return res.error('ERROR');
 
-      phone: req.body.phone,
-      dob: req.body.dob,
-      dlNumber: req.body.dlNumber,
-      dlState: req.body.dlState,
+      var landlordId = property.landlord.id;
 
-      currentAddress: req.body.currentAddress,
-      currentCity: req.body.currentCity,
-      currentState: req.body.currentState,
-      currentZip: req.body.currentZip,
-      currentLandlordName: req.body.currentLandlordName,
-      currentLandlordAddress: req.body.currentLandlordAddress,
-      currentLandlordPhone: req.body.currentLandlordPhone,
-      timeAtCurrentAddress: req.body.timeAtCurrentAddress,
-      reasonForLeavingCurrent: req.body.reasonForLeavingCurrent,
+      Application.create({
+        property: propertyId,
+        tenant: tenantId,
+        landlord: landlordId,
 
-      previousAddress: req.body.previousAddress,
-      previousCity: req.body.previousCity,
-      previousState: req.body.previousState,
-      previousZip: req.body.previousZip,
-      previousLandlordName: req.body.previousLandlordName,
-      previousLandlordAddress: req.body.previousLandlordAddress,
-      previousLandlordPhone: req.body.previousLandlordPhone,
-      timeAtPreviousAddress: req.body.timeAtPreviousAddress,
-      reasonForLeavingPrevious: req.body.reasonForLeavingPrevious,
+        phone: req.body.phone,
+        dob: req.body.dob,
+        dlNumber: req.body.dlNumber,
+        dlState: req.body.dlState,
 
-      autoYear: req.body.autoYear,
-      autoMake: req.body.autoMake,
-      autoModel: req.body.autoModel,
+        currentAddress: req.body.currentAddress,
+        currentCity: req.body.currentCity,
+        currentState: req.body.currentState,
+        currentZip: req.body.currentZip,
+        currentLandlordName: req.body.currentLandlordName,
+        currentLandlordAddress: req.body.currentLandlordAddress,
+        currentLandlordPhone: req.body.currentLandlordPhone,
+        timeAtCurrentAddress: req.body.timeAtCurrentAddress,
+        reasonForLeavingCurrent: req.body.reasonForLeavingCurrent,
 
-      autoState: req.body.autoState,
-      autoLicense: req.body.autoLicense,
+        previousAddress: req.body.previousAddress,
+        previousCity: req.body.previousCity,
+        previousState: req.body.previousState,
+        previousZip: req.body.previousZip,
+        previousLandlordName: req.body.previousLandlordName,
+        previousLandlordAddress: req.body.previousLandlordAddress,
+        previousLandlordPhone: req.body.previousLandlordPhone,
+        timeAtPreviousAddress: req.body.timeAtPreviousAddress,
+        reasonForLeavingPrevious: req.body.reasonForLeavingPrevious,
 
-      presentEmployer: req.body.presentEmployer,
-      presentEmployerPosition: req.body.presentEmployerPosition,
-      presentEmployerPhone: req.body.presentEmployerPhone,
-      presentEmployerAddress: req.body.presentEmployerAddress,
-      presentEmployerCity: req.body.presentEmployerCity,
-      presentEmployerState: req.body.presentEmployerState,
-      presentEmployerZip: req.body.presentEmployerZip,
-      timeAtPresentEmployer: req.body.timeAtPresentEmployer,
-      presentEmployerMonthlyIncome: req.body.presentEmployerMonthlyIncome,
-      otherIncome: req.body.otherIncome
+        autoYear: req.body.autoYear,
+        autoMake: req.body.autoMake,
+        autoModel: req.body.autoModel,
 
-    }).exec(function(err, application) {
-      if (err) return res.error('Problem creating the application');
+        autoState: req.body.autoState,
+        autoLicense: req.body.autoLicense,
 
-      req.flash('success', 'Application submitted!');
-      return res.redirect('/tenant/home');
+        presentEmployer: req.body.presentEmployer,
+        presentEmployerPosition: req.body.presentEmployerPosition,
+        presentEmployerPhone: req.body.presentEmployerPhone,
+        presentEmployerAddress: req.body.presentEmployerAddress,
+        presentEmployerCity: req.body.presentEmployerCity,
+        presentEmployerState: req.body.presentEmployerState,
+        presentEmployerZip: req.body.presentEmployerZip,
+        timeAtPresentEmployer: req.body.timeAtPresentEmployer,
+        presentEmployerMonthlyIncome: req.body.presentEmployerMonthlyIncome,
+        otherIncome: req.body.otherIncome
+
+      }).exec(function(err, application) {
+        if (err) return res.error('Problem creating the application');
+
+        req.flash('success', 'Application submitted!');
+        return res.redirect('/tenant/home');
+      });
     });
   },
 
