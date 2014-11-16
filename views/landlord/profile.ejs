@@ -2,9 +2,9 @@
 	<div class="profile-head">
 		<a href="" class="btn btn-orange btn-profile-edit">Edit</a>
 		<img class="profile-image" src="http://placehold.it/150x150" alt="" />
-		<h2 class="profile-title">Christian Taylor</h2>
+    <h2 class="profile-title"><%= req.session.user.landlord.firstName %> <%= req.session.user.landlord.lastName %></h2>
 		<div class="profile-details">
-			<div class="profile-detail">christiabtaylor@gmail.com</div>
+      <div class="profile-detail"><%= req.session.user.email %></div>
 			<div class="profile-detail">316-208-1004</div>
 		</div>
 	</div>
