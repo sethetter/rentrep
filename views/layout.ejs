@@ -56,80 +56,24 @@
 
       </div>
 
-    <% ['error', 'success'].forEach(function(type) { %>
-      <% req.flash(type).forEach(function(msg) { %>
-        <div class="alert alert-<%= type === 'error' ? 'error' : 'success' %>">
-          <p><%= msg %></p>
-        </div>
-      <% }) %>
-    <% }) %>
-
-    <%- body %>
-
-    <div class="zone zone-foot">
-      <div class="core core-foot">
-          <div class="grid-foot grid">
-            <div class="unit-foot unit4-md">
-              <ul class="menu menu-foot">
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-              </ul>
-            </div>
-            <div class="unit-foot unit4-md">
-              <ul class="menu menu-foot">
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-              </ul>
-            </div>
-            <div class="unit-foot unit4-md">
-              <ul class="menu menu-foot">
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-                <li><a href="">Mega Footer Link</a></li>
-              </ul>
-            </div>
+    <div class="main clearfix">
+      <% ['error', 'success'].forEach(function(type) { %>
+        <% req.flash(type).forEach(function(msg) { %>
+          <div class="alert alert-<%= type === 'error' ? 'error' : 'success' %>">
+            <p><%= msg %></p>
           </div>
-          <div class="text-center"><small>&copy; 2014 Rent Karma</small></div>
+        <% }) %>
+      <% }) %>
+
+      <%- body %>
+
+    </div>
+
+<!--     <div class="zone zone-foot">
+      <div class="core core-foot">
+        <div class="text-center"><small>&copy; 2014 Rent Karma</small></div>
       </div>
-    </div><!-- .foot-outer -->
+    </div> -->
 
     <script src="/js/dependencies/sails.io.js"></script>
   </body>

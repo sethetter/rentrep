@@ -2,7 +2,11 @@
 * {
     -webkit-box-sizing: border-box;
 }
-
+html {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
 body {
     font-size: 16px;
     font-family: 'Helvetica Neue', sans-serif;
@@ -12,7 +16,6 @@ body {
     width: 100%;
     height: 100%;
     position: relative;
-    padding-top: 68px;
 }
 img {
     max-width: 100%;
@@ -25,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 8px;
 }
 p, ul {
-    margin: 0 1.5em;
+    margin: 0 0 1.5em 0;
 }
 ::-moz-selection {
     background: #b3d4fc;
@@ -52,6 +55,7 @@ p, ul {
 .alert {
     margin-bottom: 1em;
     padding: .4em .8em;
+    position: relative;
 }
 .alert-success {
     background: #b8b8b8;
@@ -133,7 +137,6 @@ p, ul {
     position: absolute;
     width: 1px;
 }
-
 .zone-head {
     width: 100%;
     position: fixed;
@@ -142,6 +145,55 @@ p, ul {
     z-index: 50;
     background: #fff;
 }
+.main {
+    padding-top: 48px;
+    width: 100%;
+    position: relative;
+}
+
+/* Main Left */
+.main-left {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background-color: #e8e8e8;
+    overflow: auto;
+}
+.main-left-inner {
+    padding: 1em;
+}
+.profile-image {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto 1em 0;
+    border-radius: 50%;
+}
+
+.main-right {
+    position: relative;
+    padding-left: 300px;
+}
+.gallery-listing {
+    padding: 2em 1em;
+}
+.unit-listing {
+    margin-bottom: 2em;
+}
+.item-listing {
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.2);
+}
+.item-listing-image {
+    width: 100%;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+.item-listing-body {
+    padding: 1em;
+}
+
+
 .form-home {
     position: fixed;
     left: 30%;
@@ -228,7 +280,7 @@ p, ul {
     right: 0;
     padding: 1em;
     background: #e8e8e8;
-    z-index: 100;
+    z-index: 500;
     min-width: 180px;
     display: none;
 }
@@ -412,17 +464,16 @@ p, ul {
 }
 
 /* Home */
-.container-window {
+.home-window {
     width: 50%;
     height: 100%;
     position: fixed;
     top: 0;
-    padding: 0;
-}
-.container-window-left {
     left: 0;
+    padding: 0;
+    z-index: -1;
 }
-.container-window-right {
+.home-window-right {
     left: 50%;
 }
 .background-tenant {
