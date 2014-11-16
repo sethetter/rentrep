@@ -66,6 +66,9 @@ module.exports = {
       type: 'text'
     },
 
+    listed: { type: 'boolean' },
+    rented: { type: 'boolean' },
+
     landlord: {
       model: 'landlord',
       required: true

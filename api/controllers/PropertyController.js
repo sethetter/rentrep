@@ -15,9 +15,6 @@ module.exports = {
   },
 
   create: function(req, res) {
-    console.log('-'*100);
-    console.log(req.body);
-    console.log('-'*100);
     Property.create({
       streetAddress: req.body.streetAddress,
       city: req.body.city,
@@ -37,7 +34,6 @@ module.exports = {
       utilities: req.body.utilities,
       landlord: req.session.user.landlord.id
     }).exec(function(err, property) {
-      console.log(err);
       if (err) return res.error('There was a problem creating your property.');
 
       req.flash('success', 'Property created!');

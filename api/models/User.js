@@ -19,6 +19,10 @@ var User = {
       type: 'string',
       required: true
     },
+    phone: {
+      type: 'string',
+      required: true
+    },
 
     tenant: { model: 'tenant' },
     landlord: { model: 'landlord' },
