@@ -1,5 +1,5 @@
 /**
-* Application.js
+* CoApplication.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
@@ -9,7 +9,9 @@ module.exports = {
 
   attributes: {
 
-    // Primary Attributes
+    firstName: { type: 'string', required: true },
+    lastName: { type: 'string', required: true },
+
     phone: { type: 'integer', required: true },
     dob: { type: 'date', required: true },
     dlNumber: { type: 'integer', required: true },
@@ -55,20 +57,9 @@ module.exports = {
 
     otherIncome: { type: 'text' },
 
-    // Associations
-    property: {
-      model: 'property',
+    application: {
+      model: 'application',
       required: true
-    },
-
-    tenant: {
-      model: 'tenant',
-      required: true
-    },
-
-    coApplications: {
-      collection: 'coApplication',
-      via: 'application'
     }
   }
 };
