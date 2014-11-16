@@ -34,11 +34,9 @@ module.exports.routes = {
 
   '/': { view: 'home' },
 
-  // Register view routes
+  // Account creation
   'get /tenant/register': { view: 'tenant/register' },
   'get /landlord/register': { view: 'landlord/register' },
-
-  // Create user reords
   'post /tenant': 'TenantController.create',
   'post /landlord': 'LandlordController.create',
 
@@ -47,19 +45,23 @@ module.exports.routes = {
   'post /login': 'SessionController.login',
   'get /logout': 'SessionController.logout',
 
-  // Tenant routes
+  // Tenant
   'get /tenant/home': 'TenantController.home',
 
-  // Landlord routes
+  // Landlord
   'get /landlord/home': 'LandlordController.home',
 
   // Ratings
   'post /landlord/:landlordId/rating': 'LandlordRatingController.create',
 
-  // Property routes
+  // Property
   'get /property/new': 'PropertyController.new',
+  'get /property/:propertyId': 'PropertyController.show',
   'post /property': 'PropertyController.create',
-  'get /property/:propertyId': 'PropertyController.show'
+
+  // Applications
+  'get /property/:propertyId/application/new': 'ApplicationController.new',
+  'post /property/:propertyId/application': 'ApplicationController.create'
 
   /***************************************************************************
   *                                                                          *
