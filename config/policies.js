@@ -29,7 +29,7 @@ module.exports.policies = {
   },
 
   ApplicationController: {
-    new: 'rqeuireTenant',
+    new: 'requireTenant',
     create: 'requireTenant'
   },
 
