@@ -1,87 +1,99 @@
-<div class="zone">
-  <div class="core">
-    <form action="/property" method="post">
-      <div class="form-group">
-        <label for="streetAddress" class="form-label">Street Address</label>
-        <input name="streetAddress" id="streetAddress" required type="text" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="city" class="form-label">City</label>
-        <input name="city" id="city" required type="text" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="state" class="form-label">State</label>
-        <input name="state" id="state" required type="text" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="zip" class="form-label">Zip Code</label>
-        <input name="zip" id="zip" required type="text" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="sqFootage" class="form-label">Square Footage</label>
-        <input name="sqFootage" id="sqFootage" required type="text" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="price" class="form-label">Price</label>
-        <input name="price" id="price" required type="text" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="deposit" class="form-label">Deposit</label>
-        <input name="deposit" id="deposit" required type="text" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="pets">Pets</label>
-        <input name="pets" id="pets" type="checkbox" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="petDeposit" class="form-label">Pet Deposit</label>
-        <input name="petDeposit" id="petDeposit" type="text" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="parking" class="form-label">Parking</label>
-        <input name="parking" id="parking" required type="text" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="bedrooms" class="form-label">Bedrooms</label>
-        <input name="bedrooms" id="bedrooms" required type="text" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="bathrooms" class="form-label">Bathrooms</label>
-        <input name="bathrooms" id="bathrooms" required type="text" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="appliances" class="form-label">Appliances</label>
-        <textarea name="appliances" id="appliances" class="form-control"></textarea>
-      </div>
-
-      <div class="form-group">
-        <label for="description" class="form-label">Description</label>
-        <textarea name="description" id="description" class="form-control"></textarea>
-      </div>
-
-      <div class="form-group">
-        <label for="amenities" class="form-label">Amenities</label>
-        <textarea name="amenities" id="amenities" class="form-control"></textarea>
-      </div>
-
-      <div class="form-group">
-        <label for="utilities" class="form-label">Utilities</label>
-        <textarea name="utilities" id="utilities" class="form-control"></textarea>
-      </div>
-
-      <button type="submit">Create Property</button>
-    </form>
+<div class="main-left">
+  <div class="main-left-inner">
+    <%- partial('../landlord/profile.ejs') %>
   </div>
+</div>
+<div class="main-right">
+  <div class="main-right-inner">
+    <form class="form-property-new" action="/property" method="post">
+        <fieldset>
+          <legend>Location</legend>
+          <div class="form-group">
+            <label for="streetAddress" class="form-label">Street Address</label>
+            <input name="streetAddress" id="streetAddress" required type="text" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="city" class="form-label">City</label>
+            <input name="city" id="city" required type="text" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="state" class="form-label">State</label>
+            <input name="state" id="state" required type="text" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="zip" class="form-label">Zip Code</label>
+            <input name="zip" id="zip" required type="text" class="form-control">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Pricing</legend>
+          <div class="form-group">
+            <label for="price" class="form-label">Price</label>
+            <input name="price" id="price" required type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="deposit" class="form-label">Deposit</label>
+            <input name="deposit" id="deposit" required type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="petDeposit" class="form-label">Pet Deposit</label>
+            <input name="petDeposit" id="petDeposit" type="text" class="form-control">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Details</legend>
+          <div class="form-group">
+            <label for="pets">Pets</label>
+            <input name="pets" id="pets" type="checkbox" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="sqFootage" class="form-label">Square Footage</label>
+            <input name="sqFootage" id="sqFootage" required type="text" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="parking" class="form-label">Parking</label>
+            <input name="parking" id="parking" required type="text" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="bedrooms" class="form-label">Bedrooms</label>
+            <input name="bedrooms" id="bedrooms" required type="text" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="bathrooms" class="form-label">Bathrooms</label>
+            <input name="bathrooms" id="bathrooms" required type="text" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="appliances" class="form-label">Appliances</label>
+            <textarea name="appliances" id="appliances" class="form-control"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="amenities" class="form-label">Amenities</label>
+            <textarea name="amenities" id="amenities" class="form-control"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="utilities" class="form-label">Utilities</label>
+            <textarea name="utilities" id="utilities" class="form-control"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="description" id="description" class="form-control"></textarea>
+          </div>
+        </fieldset>
+
+
+        <button type="submit" class="btn btn-orange">Create Property</button>
+      </form>
+    </div><!-- .main-inner -->
 </div>
