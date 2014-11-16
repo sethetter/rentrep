@@ -851,16 +851,16 @@ textarea {
        (min-resolution: 120dpi) {
 
     .icon-logo {
-        background-image: url(../images/sprites/icon-logo@2x.gif);
-        background-size: 48px 48px;
+        background-image: url(../images/sprites/icon-logo@2x.png);
+        background-size: 506px 144px;
     }
     .icon-arrow-down {
         background-image: url(../images/sprites/icon-arrow-down@2x.png);
         background-size: 60px 74px;
     }
     .btn-go {
-        background-image: url(../images/sprites/btn-go.png);
-        background-size: 51px 41px;
+        background-image: url(../images/sprites/btn-go@2x.png);
+        background-size: 102px 82px;
     }
 }
 
