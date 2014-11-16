@@ -1,0 +1,25 @@
+<div class="profile">
+	<div class="profile-head">
+		<a href="" class="btn btn-orange btn-profile-edit">Edit</a>
+		<img class="profile-image" src="http://placehold.it/150x150" alt="" />
+    <h2 class="profile-title"><%= req.session.user.tenant.firstName %> <%= req.session.user.tenant.lastName %></h2>
+		<div class="profile-details">
+      <div class="profile-detail"><%= req.session.user.email %></div>
+      <div class="profile-detail"><%= req.session.user.phone %></div>
+		</div>
+	</div>
+	<div class="profile-body">
+		<div class="profile-rating">
+			<span class="icon icon-rate icon-rate-on">1</span>
+			<span class="icon icon-rate icon-rate-on">2</span>
+			<span class="icon icon-rate icon-rate-on">3</span>
+			<span class="icon icon-rate icon-rate-off">x</span>
+			<span class="icon icon-rate icon-rate-off">x</span>
+		</div>
+		<div class="nav-main-left">
+			<ul class="menu-main-left menu">
+				<li><a href="/tenant/home">Home</a></li>
+			</ul>
+		</div>
+	</div>
+</div>

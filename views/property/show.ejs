@@ -1,6 +1,10 @@
 <div class="main-left">
   <div class="main-left-inner">
-    <%- partial('../landlord/profile.ejs') %>
+    <% if (req.session.user.tenant) { %>
+      <%- partial('../tenant/profile.ejs') %>
+    <% } else if (req.session.user.landlord) { %>
+      <%- partial('../landlord/profile.ejs') %>
+    <% } %>
   </div>
 </div>
 <div class="main-right">
@@ -15,12 +19,12 @@
           <div class="unit-property-thumb"><img class="property-thumb" src="http://placehold.it/96x96" alt="" /></div>
           <div class="unit-property-thumb"><img class="property-thumb" src="http://placehold.it/96x96" alt="" /></div>
         </div>
-      </div> 
+      </div>
       <div class="unit-property unit6-md">
         <div class="property-map-container map-container">
           <div id="map" class="property-map"><%= property.streetAddress %> <%= property.city %> <%= property.state %> <%= property.zip %></div>
         </div>
-      </div> 
+      </div>
     </div><!-- .grid-listing -->
   </div>
 </div>
@@ -38,7 +42,7 @@
     var mapPlaceholder = document.getElementById('map');
     var mapData = mapPlaceholder.textContent || mapPlaceholder.innerText;
     var map = new google.maps.Map(mapPlaceholder, mapOptions);
-    
+
     function codeAddress(address) {
         geocoder.geocode( { 'address': address}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
@@ -52,7 +56,7 @@
         }
       });
     }
-    
+
     codeAddress(mapData);
   }
   function loadMap() {
