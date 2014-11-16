@@ -37,8 +37,7 @@ module.exports = {
       required: true
     },
     pets: {
-      type: 'boolean',
-      required: true
+      type: 'boolean'
     },
     petDeposit: {
       type: 'integer'
