@@ -398,6 +398,7 @@ fieldset {
     position: absolute;
     top: -33px;
     left: -9px;
+    z-index: 500;
 }
 .list-alert-icon {
     position: absolute;
