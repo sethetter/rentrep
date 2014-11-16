@@ -1,6 +1,7 @@
 /* Defaults */
 * {
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 html {
     width: 100%;
@@ -63,6 +64,13 @@ p, ul {
 }
 .alert-error {
     background: #f1623e;
+}
+.zone-head .alert {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: -1;
+    width: 100%;
 }
 .close-alert {
     position: relative;
@@ -202,7 +210,10 @@ p, ul {
 .profile-title {
     font-size: 26px;
     color: #636363;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
+}
+.profile-details {
+    margin-bottom: 1em;
 }
 
 .profile-rating {
@@ -216,6 +227,7 @@ p, ul {
     border-bottom: 1px solid #636363;
     font-size: 20px;
     text-transform: uppercase;
+    margin-bottom: 1em;
 }
 .menu-main-left a {
     border-bottom: 1px solid #636363;
@@ -233,14 +245,29 @@ p, ul {
     padding-left: 300px;
     z-index: 0;
 }
-.gallery-listing {
+.main-right-inner {
     padding: 2em;
 }
-.listing-title {
+.listing-title,
+legend {
+    padding: 0;
+    border: 0;
     color: #93c748;
     font-size: 44px;
     margin-bottom: 48px;
     float: left;
+}
+legend {
+    float: none;
+    margin: 0 0 8px 0;
+    line-height: 1;
+
+}
+fieldset {
+    min-width: 0;
+    padding: 0;
+    margin: 0 0 2em 0;
+    border: 0;
 }
 .form-listing-search {
     float: right;
@@ -260,6 +287,37 @@ p, ul {
     top: .6em;
     left: .5em;
 }
+
+.form-property-new {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.property-image {
+    border-radius: 8px;
+}
+.property-thumb {
+    width: 96px;
+    height: 96px;
+    border-radius: 8px;
+}
+
+.map-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 60%;
+    position: relative;
+}
+.map-container #map {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
 .unit-listing {
     margin-bottom: 2em;
 }
@@ -429,6 +487,9 @@ p, ul {
     box-shadow: inset 0px 1px 4px rgba(0,0,0,0.1), 0px 0px 0px 7px rgba(204,204,204,0);
     -webkit-transition: border 0.3s, box-shadow 0.3s;
     -transition: border 0.3s, box-shadow 0.3s;
+}
+textarea {
+    min-height: 200px;
 }
 
 .login-dropdown {
@@ -634,6 +695,15 @@ p, ul {
     .unit11-lg { width: 91.6666666666666% }
 }
 
+.grid-property-thumb {
+    margin: 0 -4px;
+}
+.unit-property-thumb {
+    display: block;
+    float: left;
+    padding: 0 5px 10px 5px; 
+}
+
 /* Home */
 .home-window {
     width: 50%;
@@ -662,7 +732,7 @@ p, ul {
     background-position: 50% 400px;
 }
 .home-window-right {
-    background: #7f8e8e;
+    background: #b4cfcf;
     left: 50%;
     background-image: url(../images/background-landlord.jpg);
     background-repeat: no-repeat;

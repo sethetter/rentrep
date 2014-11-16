@@ -1,3 +1,72 @@
+<div class="main-left">
+  <div class="main-left-inner">
+    <%- partial('../landlord/profile.ejs') %>
+  </div>
+</div>
+<div class="main-right">
+  <div class="main-right-inner gallery-listing clearfix">
+    <div class="grid grid-listing">
+      <div class="unit-property unit6-md">
+        <img class="property-image" src="http://placehold.it/600x400" alt="" />
+        <div class="grid grid-property-thumb">
+          <div class="unit-property-thumb"><img class="property-thumb" src="http://placehold.it/96x96" alt="" /></div>
+          <div class="unit-property-thumb"><img class="property-thumb" src="http://placehold.it/96x96" alt="" /></div>
+          <div class="unit-property-thumb"><img class="property-thumb" src="http://placehold.it/96x96" alt="" /></div>
+          <div class="unit-property-thumb"><img class="property-thumb" src="http://placehold.it/96x96" alt="" /></div>
+          <div class="unit-property-thumb"><img class="property-thumb" src="http://placehold.it/96x96" alt="" /></div>
+        </div>
+      </div> 
+      <div class="unit-property unit6-md">
+        <div class="property-map-container map-container">
+          <div id="map" class="property-map"><%= property.streetAddress %> <%= property.city %> <%= property.state %> <%= property.zip %></div>
+        </div>
+      </div> 
+    </div><!-- .grid-listing -->
+  </div>
+</div>
+
+<script>
+  function initMap() {
+    var latlng = new google.maps.LatLng(37.688334, -97.331462);
+    var geocoder = new google.maps.Geocoder();
+    var mapOptions = {
+      center: latlng,
+      zoom: 16,
+      mapTypeControl: false,
+      streetViewControl: false
+    }
+    var mapPlaceholder = document.getElementById('map');
+    var mapData = mapPlaceholder.textContent || mapPlaceholder.innerText;
+    var map = new google.maps.Map(mapPlaceholder, mapOptions);
+    
+    function codeAddress(address) {
+        geocoder.geocode( { 'address': address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          map.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+              map: map,
+              position: results[0].geometry.location
+          });
+        } else {
+          console.error("Geocode was not successful for the following reason: " + status);
+        }
+      });
+    }
+    
+    codeAddress(mapData);
+  }
+  function loadMap() {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +
+      'key=AIzaSyD48SS-hIpDX1Mtx1CEA0t1M5kx6a2KJw4&' +
+      'callback=initMap';
+    document.body.appendChild(script);
+  }
+  window.onload = loadMap;
+</script>
+
+
 <p>
   <strong>Street Address</strong>: <%= property.streetAddress %>
 </p>

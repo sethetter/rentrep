@@ -26,6 +26,14 @@
     <![endif]-->
 
     <div class="zone zone-head">
+        <% ['error', 'success'].forEach(function(type) { %>
+          <% req.flash(type).forEach(function(msg) { %>
+            <div class="alert alert-<%= type === 'error' ? 'error' : 'success' %>">
+              <button type="button" class="close-alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+              <%= msg %>
+            </div>
+          <% }) %>
+        <% }) %>
       <div class="core core-head clearfix">
           <h1 class="logo-head"><a class="icon icon-logo" href="/">RentRep</a></h1>
           <button class="nav-toggle" type="button" role="button" aria-label="Toggle Navigation"><span class="lines"></span></button>
@@ -44,7 +52,7 @@
                         <label for="password" class="form-label">Password</label>
                         <input type="password" id="password" class="form-control" name="password" required />
                       </div>
-                      <button class="btn btn-submit" type="submit">Login</button>
+                      <button class="btn btn-orange btn-submit" type="submit">Login</button>
                     </form>
                   </div>
                 </div>
@@ -57,14 +65,6 @@
       </div>
 
     <div class="main clearfix">
-        <% ['error', 'success'].forEach(function(type) { %>
-          <% req.flash(type).forEach(function(msg) { %>
-            <div class="alert alert-<%= type === 'error' ? 'error' : 'success' %>">
-              <button type="button" class="close-alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-              <%= msg %>
-            </div>
-          <% }) %>
-        <% }) %>
 
       <%- body %>
 
