@@ -52,8 +52,13 @@ module.exports = {
     presentEmployerPhone: { type: 'string', required: true },
     timeAtPresentEmployer: { type: 'string', required: true },
     presentEmployerMonthlyIncome: { type: 'integer', required: true },
-
     otherIncome: { type: 'text' },
+
+    state: {
+      type: 'string',
+      required: true,
+      default: 'submitted'
+    },
 
     // Associations
     property: {
