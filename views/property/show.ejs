@@ -68,7 +68,7 @@
           <h3 class="show-title">Applications</h3>
           <ul class="property-applications">
             <% applications.forEach(function(application) { %>
-              <li><a href="/application/<%= application.id %>"><%= application.tenant.firstName %> <%= application.tenant.lastName %></a></li>
+              <li><a href="/property/<%= property.id %>/application/<%= application.id %>"><%= application.tenant.firstName %> <%= application.tenant.lastName %></a></li>
             <% }) %>
           </ul>
         <% } %>
