@@ -9,6 +9,16 @@ module.exports = {
 
   attributes: {
 
+    // Associations
+    property: {
+      model: 'property',
+      required: true
+    },
+
+    tenant: {
+      model: 'tenant',
+      required: true
+    }
   }
 };
 

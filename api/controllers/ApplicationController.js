@@ -33,5 +33,7 @@ module.exports = {
   },
 
   // TODO: approve, deny
+  approve: function(req, res) {},
+  deny: functio(req, res) {}
 };
 

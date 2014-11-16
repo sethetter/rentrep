@@ -28,6 +28,11 @@ module.exports.policies = {
     create: 'requireLandlord'
   },
 
+  ApplicationController: {
+    new: 'rqeuireTenant',
+    create: 'requireTenant'
+  },
+
   LandlordRatingController: {
     create: 'requireTenant'
   }
