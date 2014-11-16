@@ -15,10 +15,47 @@
           <div class="unit-property-thumb"><img class="property-thumb" src="http://placehold.it/96x96" alt="" /></div>
           <div class="unit-property-thumb"><img class="property-thumb" src="http://placehold.it/96x96" alt="" /></div>
         </div>
-      </div> 
+        <div class="unit6-sm">
+          <h3 class="show-title">Facts</h3>
+          <div class="show-detail"><strong>Square Footage</strong>: <%= property.sqFootage %></div>
+          <div class="show-detail"><strong>Deposit</strong>: <%= property.deposit %></div>
+          <div class="show-detail"><strong>Pets</strong>: <%= property.pets %></div>
+          <div class="show-detail"><strong>Pet Deposit</strong>: <%= property.petDeposit %></div>
+        </div>
+        <div class="unit6-sm">
+          <h3 class="show-title">Features</h3>
+          <div class="show-detail"><strong>Parking</strong>: <%= property.parking %></div>
+          <div class="show-detail"><strong>Bedrooms</strong>: <%= property.bedrooms %></div>
+          <div class="show-detail"><strong>Bathrooms</strong>: <%= property.bathrooms %></div>
+          <div class="show-detail"><strong>Appliances</strong>: <%= property.appliances %></div>
+          <div class="show-detail"><strong>Amenities</strong>: <%= property.amenities %></div>
+          <div class="show-detail"><strong>Utilities</strong>: <%= property.utilities %></div>
+        </div>
+      </div><!-- .unit-propert -->
       <div class="unit-property unit6-md">
         <div class="property-map-container map-container">
           <div id="map" class="property-map"><%= property.streetAddress %> <%= property.city %> <%= property.state %> <%= property.zip %></div>
+        </div>
+        <div class="property-info clearfix">
+          <div class="grid">
+              <div class="unit6-sm show-address">
+                <%= property.streetAddress %><br />
+                <%= property.city %>, <%= property.state %>, <%= property.zip %>
+              </div>
+              <div class="unit6-sm">
+                  <div class="show-price">$<%= property.price %></div>
+                  <div class="show-rating">
+                    <span class="icon icon-rate icon-rate-on">1</span>
+                    <span class="icon icon-rate icon-rate-on">2</span>
+                    <span class="icon icon-rate icon-rate-on">3</span>
+                    <span class="icon icon-rate icon-rate-off">x</span>
+                    <span class="icon icon-rate icon-rate-off">x</span>
+                  </div>
+              </div>
+          </div>
+        </div><!-- .property-info -->
+        <div class="property-description">
+          <%= property.description %>
         </div>
       </div> 
     </div><!-- .grid-listing -->
@@ -65,53 +102,3 @@
   }
   window.onload = loadMap;
 </script>
-
-
-<p>
-  <strong>Street Address</strong>: <%= property.streetAddress %>
-</p>
-<p>
-  <strong>City</strong>: <%= property.city %>
-</p>
-<p>
-  <strong>State</strong>: <%= property.state %>
-</p>
-<p>
-  <strong>Zip</strong>: <%= property.zip %>
-</p>
-<p>
-  <strong>Square Footage</strong>: <%= property.sqFootage %>
-</p>
-<p>
-  <strong>Price</strong>: <%= property.price %>
-</p>
-<p>
-  <strong>Deposit</strong>: <%= property.deposit %>
-</p>
-<p>
-  <strong>Pets</strong>: <%= property.pets %>
-</p>
-<p>
-  <strong>Pet Deposit</strong>: <%= property.petDeposit %>
-</p>
-<p>
-  <strong>Parking</strong>: <%= property.parking %>
-</p>
-<p>
-  <strong>Bedrooms</strong>: <%= property.bedrooms %>
-</p>
-<p>
-  <strong>Bathrooms</strong>: <%= property.bathrooms %>
-</p>
-<p>
-  <strong>Appliances</strong>: <%= property.appliances %>
-</p>
-<p>
-  <strong>Description</strong>: <%= property.description %>
-</p>
-<p>
-  <strong>Amenities</strong>: <%= property.amenities %>
-</p>
-<p>
-  <strong>Utilities</strong>: <%= property.utilities %>
-</p>
