@@ -9,58 +9,60 @@
 </div>
 <div class="main-right">
   <div class="main-right-inner clearfix">
-    <h1>Application for <%= application.property.streetAddress %>, <%= application.property.zip %></h1>
-    <p><strong>Applicant Name</strong>: <%= application.tenant.firstName %> <%= application.tenant.lastName %></p>
-    <p><strong>Application State</strong>: <%= application.state.toUpperCase() %></p>
+    <h2 class="listing-title">Application for <%= application.property.streetAddress %>, <%= application.property.zip %></h2>
+      <div>
+        <p><strong>Applicant Name</strong>: <%= application.tenant.firstName %> <%= application.tenant.lastName %></p>
+        <p><strong>Application State</strong>: <%= application.state.toUpperCase() %></p>
 
-    <h3>Personal Information</h3>
-    <p><strong>Phone</strong>: <%= application.tenant.phone %></p>
-    <p><strong>Date of Birth</strong>: <%= application.dob %></p>
-    <p><strong>Driver's License #</strong>: <%= application.dlNumber %></p>
-    <p><strong>Driver's License State</strong>: <%= application.dlState %></p>
+        <h3>Personal Information</h3>
+        <p><strong>Phone</strong>: <%= application.tenant.phone %></p>
+        <p><strong>Date of Birth</strong>: <%= application.dob %></p>
+        <p><strong>Driver's License #</strong>: <%= application.dlNumber %></p>
+        <p><strong>Driver's License State</strong>: <%= application.dlState %></p>
 
-    <h3>Current Address</h3>
-    <p><strong>Address</strong>: <%= application.currentAddress %></p>
-    <p><strong>City</strong>: <%= application.currentCity %></p>
-    <p><strong>State</strong>: <%= application.currentState %></p>
-    <p><strong>Zip</strong>: <%= application.currentZip %></p>
-    <p><strong>Landlord Name</strong>: <%= application.currentLandlordName %></p>
-    <p><strong>Landlord Address</strong>: <%= application.currentLandlordAddress %></p>
-    <p><strong>Landlord Phone</strong>: <%= application.currentLandlordPhone %></p>
-    <p><strong>Time in Residence</strong>: <%= application.timeAtCurrentAddress %></p>
-    <p><strong>Reason for Leaving</strong>: <%= application.reasonForLeavingCurrent %></p>
+        <h3>Current Address</h3>
+        <p><strong>Address</strong>: <%= application.currentAddress %></p>
+        <p><strong>City</strong>: <%= application.currentCity %></p>
+        <p><strong>State</strong>: <%= application.currentState %></p>
+        <p><strong>Zip</strong>: <%= application.currentZip %></p>
+        <p><strong>Landlord Name</strong>: <%= application.currentLandlordName %></p>
+        <p><strong>Landlord Address</strong>: <%= application.currentLandlordAddress %></p>
+        <p><strong>Landlord Phone</strong>: <%= application.currentLandlordPhone %></p>
+        <p><strong>Time in Residence</strong>: <%= application.timeAtCurrentAddress %></p>
+        <p><strong>Reason for Leaving</strong>: <%= application.reasonForLeavingCurrent %></p>
 
-    <h3>Previous Address</h3>
-    <p><strong>Address</strong>: <%= application.previousAddress %></p>
-    <p><strong>City</strong>: <%= application.previousCity %></p>
-    <p><strong>State</strong>: <%= application.previousState %></p>
-    <p><strong>Zip</strong>: <%= application.previousZip %></p>
-    <p><strong>Landlord Name</strong>: <%= application.previousLandlordName %></p>
-    <p><strong>Landlord Address</strong>: <%= application.previousLandlordAddress %></p>
-    <p><strong>Landlord Phone</strong>: <%= application.previousLandlordPhone %></p>
-    <p><strong>Time in Residence</strong>: <%= application.timeAtPreviousAddress %></p>
-    <p><strong>Reason for Leaving</strong>: <%= application.reasonForLeavingPrevious %></p>
+        <h3>Previous Address</h3>
+        <p><strong>Address</strong>: <%= application.previousAddress %></p>
+        <p><strong>City</strong>: <%= application.previousCity %></p>
+        <p><strong>State</strong>: <%= application.previousState %></p>
+        <p><strong>Zip</strong>: <%= application.previousZip %></p>
+        <p><strong>Landlord Name</strong>: <%= application.previousLandlordName %></p>
+        <p><strong>Landlord Address</strong>: <%= application.previousLandlordAddress %></p>
+        <p><strong>Landlord Phone</strong>: <%= application.previousLandlordPhone %></p>
+        <p><strong>Time in Residence</strong>: <%= application.timeAtPreviousAddress %></p>
+        <p><strong>Reason for Leaving</strong>: <%= application.reasonForLeavingPrevious %></p>
 
-    <h3>Vehicle Information</h3>
-    <p><strong>Year</strong>: <%= application.autoYear %></p>
-    <p><strong>Make</strong>: <%= application.autoMake %></p>
-    <p><strong>Model</strong>: <%= application.autoModel %></p>
-    <p><strong>State Registered</strong>: <%= application.autoState %></p>
-    <p><strong>License</strong>: <%= application.autoLicense %></p>
+        <h3>Vehicle Information</h3>
+        <p><strong>Year</strong>: <%= application.autoYear %></p>
+        <p><strong>Make</strong>: <%= application.autoMake %></p>
+        <p><strong>Model</strong>: <%= application.autoModel %></p>
+        <p><strong>State Registered</strong>: <%= application.autoState %></p>
+        <p><strong>License</strong>: <%= application.autoLicense %></p>
 
-    <h3>Employer Information</h3>
-    <p><strong>Employer</strong>: <%= application.presentEmployer %></p>
-    <p><strong>Positino</strong>: <%= application.presentEmployerPosition %></p>
-    <p><strong>Phone</strong>: <%= application.presentEmployerPhone %></p>
-    <p><strong>Address</strong>: <%= application.presentEmployerAddress %></p>
-    <p><strong>City</strong>: <%= application.presentEmployerCity %></p>
-    <p><strong>State</strong>: <%= application.presentEmployerState %></p>
-    <p><strong>Zip</strong>: <%= application.presentEmployerZip %></p>
-    <p><strong>Time in Position</strong>: <%= application.timeAtPresentEmployer %></p>
-    <p><strong>Monthly Income</strong>: <%= application.presentEmployerMonthlyIncome %></p>
-    <p><strong>Other Income</strong>: <%= application.otherIncome %></p>
+        <h3>Employer Information</h3>
+        <p><strong>Employer</strong>: <%= application.presentEmployer %></p>
+        <p><strong>Positino</strong>: <%= application.presentEmployerPosition %></p>
+        <p><strong>Phone</strong>: <%= application.presentEmployerPhone %></p>
+        <p><strong>Address</strong>: <%= application.presentEmployerAddress %></p>
+        <p><strong>City</strong>: <%= application.presentEmployerCity %></p>
+        <p><strong>State</strong>: <%= application.presentEmployerState %></p>
+        <p><strong>Zip</strong>: <%= application.presentEmployerZip %></p>
+        <p><strong>Time in Position</strong>: <%= application.timeAtPresentEmployer %></p>
+        <p><strong>Monthly Income</strong>: <%= application.presentEmployerMonthlyIncome %></p>
+        <p><strong>Other Income</strong>: <%= application.otherIncome %></p>
 
-    <button class="btn btn-orange">Approve</button>
-    <button class="btn btn-orange">Deny</button>
+        <button class="btn btn-orange">Approve</button>
+        <button class="btn btn-orange">Deny</button>
+      </div>
   </div>
 </div>
