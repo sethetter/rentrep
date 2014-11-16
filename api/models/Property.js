@@ -72,6 +72,11 @@ module.exports = {
     landlord: {
       model: 'landlord',
       required: true
+    },
+
+    applications: {
+      collection: 'application',
+      via: 'property'
     }
   }
 };
