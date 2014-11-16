@@ -203,12 +203,21 @@ p, ul {
     margin-bottom: 16px;
 }
 
-.main-left-nav {
-    border-top: 1px solid #636363;
+.nav-main-left {
+    text-align: center;
+    border-top: 2px solid #636363;
     border-bottom: 1px solid #636363;
+    font-size: 20px;
+    text-transform: uppercase;
 }
-.main-left-menu {
-    
+.menu-main-left a {
+    border-bottom: 1px solid #636363;
+    display: block;
+    color: #636363;
+    -webkit-transition: background .5s;
+}
+.menu-main-left a:hover {
+    background: #deeeee;
 }
 
 .main-right {
@@ -339,7 +348,6 @@ p, ul {
     right: 0;
     padding: 1.5em 1em 1em 1em;
     background: #e8e8e8;
-    z-index: -1;
     min-width: 280px;
     display: none;
     text-align: left;
@@ -391,6 +399,8 @@ p, ul {
     background-image: url(../images/sprites/icon-arrow-down.png);
     width: 30px;
     height: 37px;
+}
+.icon-rate- {
 }
 
 .hidden {
@@ -530,7 +540,6 @@ p, ul {
     top: 0;
     left: 0;
     padding: 0;
-    z-index: -1;
     padding-top: 93px;
     text-align: center;
     color: #fff;
@@ -539,8 +548,7 @@ p, ul {
 .home-title {
     font-size: 80px;
     opacity: .5;
-    margin-top: 96px;
-    margin-bottom: 36px;
+    margin: 0px;
 }
 .home-window ul {
     text-align: left;
@@ -549,14 +557,14 @@ p, ul {
     background: #8cbd44;
     background-image: url(../images/background-tenant.jpg);
     background-repeat: no-repeat;
-    background-position: 50% 100%;
+    background-position: 50% 400px;
 }
 .home-window-right {
     background: #7f8e8e;
     left: 50%;
     background-image: url(../images/background-landlord.jpg);
     background-repeat: no-repeat;
-    background-position: 50% 100%;
+    background-position: 50% 400px;
 }
 .home-window-content {
     width: 80%;
