@@ -1,0 +1,183 @@
+<div class="main-left">
+  <div class="main-left-inner">
+    <%- partial('../../tenant/profile.ejs') %>
+  </div>
+</div>
+
+<div class="main-right">
+  <div class="main-right-inner">
+    <h1>Application for <%= property.streetAddress %>, <%= property.zip %></h1>
+    <form class="form-application-new" action="/property/<%= req.params.propertyId %>/application" method="post">
+      <fieldset>
+        <legend>Personal Information</legend>
+        <div class="form-group">
+          <label class="form-label" for="phone">Phone</label>
+          <input type="text" name="phone" id="phone" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="dob">Date of Birth</label>
+          <input type="text" name="dob" id="dob" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="dlNumber">Driver's License Number</label>
+          <input type="text" name="dlNumber" id="dlNumber" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="dlState">Driver's License State</label>
+          <input type="text" name="dlState" id="dlState" class="form-control">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Current Residence</legend>
+        <div class="form-group">
+          <label class="form-label" for="currentAddress">Address</label>
+          <input type="text" name="currentAddress" id="currentAddress" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="currentCity">City</label>
+          <input type="text" name="currentCity" id="currentCity" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="currentState">State</label>
+          <input type="text" name="currentState" id="currentState" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="currentZip">Zip</label>
+          <input type="text" name="currentZip" id="currentZip" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="currentLandlordName">Landlord Name</label>
+          <input type="text" name="currentLandlordName" id="currentLandlordName" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="currentLandlordAddress">Landlord Address</label>
+          <input type="text" name="currentLandlordAddress" id="currentLandlordAddress" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="currentLandlordPhone">Landlord Phone</label>
+          <input type="text" name="currentLandlordPhone" id="currentLandlordPhone" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="timeAtCurrentAddress">Time at Residence</label>
+          <input type="text" name="timeAtCurrentAddress" id="timeAtCurrentAddress" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="reasonForLeavingCurrent">Reason for Leaving</label>
+          <input type="text" name="reasonForLeavingCurrent" id="reasonForLeavingCurrent" class="form-control">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Previous Residence</legend>
+        <div class="form-group">
+          <label class="form-label" for="previousAddress">Address</label>
+          <input type="text" name="previousAddress" id="previousAddress" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="previousCity">City</label>
+          <input type="text" name="previousCity" id="previousCity" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="previousState">State</label>
+          <input type="text" name="previousState" id="previousState" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="previousZip">Zip</label>
+          <input type="text" name="previousZip" id="previousZip" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="previousLandlordName">Landlord Name</label>
+          <input type="text" name="previousLandlordName" id="previousLandlordName" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="previousLandlordAddress">Landlord Address</label>
+          <input type="text" name="previousLandlordAddress" id="previousLandlordAddress" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="previousLandlordPhone">Landlord Phone</label>
+          <input type="text" name="previousLandlordPhone" id="previousLandlordPhone" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="timeAtPreviousAddress">Time at Residence</label>
+          <input type="text" name="timeAtPreviousAddress" id="timeAtPreviousAddress" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="reasonForLeavingPrevious">Reason for Leaving</label>
+          <input type="text" name="reasonForLeavingPrevious" id="reasonForLeavingPrevious" class="form-control">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Vehicle</legend>
+        <div class="form-group">
+          <label class="form-label" for="autoYear">Year</label>
+          <input type="text" name="autoYear" id="autoYear" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="autoMake">Make</label>
+          <input type="text" name="autoMake" id="autoMake" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="autoModel">Model</label>
+          <input type="text" name="autoModel" id="autoModel" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="autoState">Registered State</label>
+          <input type="text" name="autoState" id="autoState" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="autoLicense">License Plate</label>
+          <input type="text" name="autoLicense" id="autoLicense" class="form-control">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Employment</legend>
+        <div class="form-group">
+          <label class="form-label" for="presentEmployer">Employer</label>
+          <input type="text" name="presentEmployer" id="presentEmployer" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="presentEmployerPosition">Position</label>
+          <input type="text" name="presentEmployerPosition" id="presentEmployerPosition" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="presentEmployerPhone">Employer Phone</label>
+          <input type="text" name="presentEmployerPhone" id="presentEmployerPhone" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="presentEmployerAddress">Employer Address</label>
+          <input type="text" name="presentEmployerAddress" id="presentEmployerAddress" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="presentEmployerCity">Employer City</label>
+          <input type="text" name="presentEmployerCity" id="presentEmployerCity" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="presentEmployerState">Employer State</label>
+          <input type="text" name="presentEmployerState" id="presentEmployerState" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="presentEmployerZip">Employer Zip</label>
+          <input type="text" name="presentEmployerZip" id="presentEmployerZip" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="timeAtPresentEmployer">Time in Position</label>
+          <input type="text" name="timeAtPresentEmployer" id="timeAtPresentEmployer" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="presentEmployerMonthlyIncome">Monthly Income</label>
+          <input type="text" name="presentEmployerMonthlyIncome" id="presentEmployerMonthlyIncome" class="form-control">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="otherIncome">Other Income</label>
+          <input type="text" name="otherIncome" id="otherIncome" class="form-control">
+        </div>
+      </fieldset>
+
+      <button type="submit" class="btn btn-orange">Submit Application</button>
+    </form>
+  </div>
+</div>

@@ -1,6 +1,10 @@
 <div class="main-left">
   <div class="main-left-inner">
-    <%- partial('../landlord/profile.ejs') %>
+    <% if (req.session.user.tenant) { %>
+      <%- partial('../tenant/profile.ejs') %>
+    <% } else if (req.session.user.landlord) { %>
+      <%- partial('../landlord/profile.ejs') %>
+    <% } %>
   </div>
 </div>
 <div class="main-right">
@@ -57,7 +61,10 @@
         <div class="property-description">
           <%= property.description %>
         </div>
-      </div> 
+        <% if (req.session.user.type === 'tenant') { %>
+          <a class="btn btn-orange" href="/property/<%= req.params.propertyId %>/application/new">Apply Now</a>
+        <% } %>
+      </div>
     </div><!-- .grid-listing -->
   </div>
 </div>
@@ -75,7 +82,7 @@
     var mapPlaceholder = document.getElementById('map');
     var mapData = mapPlaceholder.textContent || mapPlaceholder.innerText;
     var map = new google.maps.Map(mapPlaceholder, mapOptions);
-    
+
     function codeAddress(address) {
         geocoder.geocode( { 'address': address}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
@@ -89,7 +96,7 @@
         }
       });
     }
-    
+
     codeAddress(mapData);
   }
   function loadMap() {

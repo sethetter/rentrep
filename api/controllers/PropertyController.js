@@ -49,7 +49,7 @@ module.exports = {
     Property.findOne({
       id: req.params.propertyId
     }).exec(function(err, property) {
-      if (err) return res.error('There was a problem finding specificed property.');
+      if (err || !property) return res.error('There was a problem finding specificed property.');
 
       return res.view('property/show', { property: property });
     });

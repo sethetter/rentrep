@@ -24,6 +24,7 @@ module.exports.policies = {
   },
 
   PropertyController: {
+    show: 'sessionAuth',
     new: 'requireLandlord',
     create: 'requireLandlord'
   },

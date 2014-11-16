@@ -12,7 +12,7 @@ module.exports = {
     // Primary Attributes
     phone: { type: 'integer', required: true },
     dob: { type: 'date', required: true },
-    dlNumber: { type: 'integer', required: true },
+    dlNumber: { type: 'string', required: true },
     dlState: { type: 'string', required: true },
 
     currentAddress: { type: 'string', required: true },
@@ -49,11 +49,15 @@ module.exports = {
     presentEmployerCity: { type: 'string', required: true },
     presentEmployerState: { type: 'string', required: true },
     presentEmployerZip: { type: 'integer', required: true },
-    presentEmployerPhone: { type: 'string', required: true },
     timeAtPresentEmployer: { type: 'string', required: true },
     presentEmployerMonthlyIncome: { type: 'integer', required: true },
-
     otherIncome: { type: 'text' },
+
+    state: {
+      type: 'string',
+      required: true,
+      defaultsTo: 'submitted'
+    },
 
     // Associations
     property: {
