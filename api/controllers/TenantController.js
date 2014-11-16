@@ -7,6 +7,10 @@
 
 module.exports = {
 
+  home: function(req, res) {
+    return res.view('tenant/home');
+  },
+
   /**
    * Create new tenant record
    */

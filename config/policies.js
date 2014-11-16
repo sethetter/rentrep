@@ -22,6 +22,10 @@ module.exports.policies = {
   PropertyController: {
     new: 'requireLandlord',
     create: 'requireLandlord'
+  },
+
+  LandlordRatingController: {
+    create: 'requireTenant'
   }
 
 };
