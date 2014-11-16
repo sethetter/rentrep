@@ -70,7 +70,6 @@ module.exports = {
       otherIncome: req.body.otherIncome
 
     }).exec(function(err, application) {
-      console.log(err);
       if (err) return res.error('Problem creating the application');
 
       req.flash('success', 'Application submitted!');
