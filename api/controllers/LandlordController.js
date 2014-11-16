@@ -26,6 +26,7 @@ module.exports = {
     User.create({
       email: req.body.email,
       password: req.body.password,
+      phone: req.body.phone,
       type: req.body.type
     }).exec(function(err, user) {
       if (err) return res.error('There was an error creating your account.');
