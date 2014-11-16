@@ -49,7 +49,6 @@ module.exports = {
     presentEmployerCity: { type: 'string', required: true },
     presentEmployerState: { type: 'string', required: true },
     presentEmployerZip: { type: 'integer', required: true },
-    presentEmployerPhone: { type: 'string', required: true },
     timeAtPresentEmployer: { type: 'string', required: true },
     presentEmployerMonthlyIncome: { type: 'integer', required: true },
     otherIncome: { type: 'text' },
@@ -57,7 +56,7 @@ module.exports = {
     state: {
       type: 'string',
       required: true,
-      default: 'submitted'
+      defaultsTo: 'submitted'
     },
 
     // Associations
