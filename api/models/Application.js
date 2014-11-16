@@ -12,7 +12,7 @@ module.exports = {
     // Primary Attributes
     phone: { type: 'integer', required: true },
     dob: { type: 'date', required: true },
-    dlNumber: { type: 'integer', required: true },
+    dlNumber: { type: 'string', required: true },
     dlState: { type: 'string', required: true },
 
     currentAddress: { type: 'string', required: true },
