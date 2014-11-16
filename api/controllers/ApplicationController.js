@@ -84,6 +84,17 @@ module.exports = {
     });
   },
 
+  show: function(req, res) {
+    Application.findOne({
+      id: req.params.applicationId
+    }).populate('tenant').populate('property')
+    .exec(function(err, application) {
+      if (err || !application) return res.error('There was a problem finding specificed application.');
+
+      return res.view('property/application/show', { application: application });
+    });
+  },
+
   // TODO: approve, deny
   approve: function(req, res) {},
   deny: function(req, res) {}

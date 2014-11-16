@@ -64,6 +64,14 @@
         <% if (req.session.user.type === 'tenant') { %>
           <a class="btn btn-orange" href="/property/<%= req.params.propertyId %>/application/new">Apply Now</a>
         <% } %>
+        <% if (req.session.user.type === 'landlord' && property.landlord.id === req.session.user.landlord.id) { %>
+          <h3 class="show-title">Applications</h3>
+          <ul class="property-applications">
+            <% applications.forEach(function(application) { %>
+              <li><a href="/application/<%= application.id %>"><%= application.tenant.firstName %> <%= application.tenant.lastName %></a></li>
+            <% }) %>
+          </ul>
+        <% } %>
       </div>
     </div><!-- .grid-listing -->
   </div>
