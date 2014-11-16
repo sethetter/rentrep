@@ -29,6 +29,11 @@ module.exports = {
       required: true
     }
 
+    //property: {
+    //  model: 'property',
+    //  required: true
+    //}
+
   }
 };
 
