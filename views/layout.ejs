@@ -4,13 +4,14 @@
     <title>Rental Karma</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Rental Karma</title>
+        <title>RentRep</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
+        <link href='http://fonts.googleapis.com/css?family=Raleway:700,500,300' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/styles/normalize.css">
         <link rel="stylesheet" href="/styles/main.css">
         <link rel="stylesheet" href="/styles/flexslider.css">
@@ -26,13 +27,13 @@
 
     <div class="zone zone-head">
       <div class="core core-head clearfix">
-          <h1 class="logo-head"><a class="icon icon-logo" href="/">Rental Karma</a></h1>
+          <h1 class="logo-head"><a class="icon icon-logo" href="/">RentRep</a></h1>
           <button class="nav-toggle" type="button" role="button" aria-label="Toggle Navigation"><span class="lines"></span></button>
           <div class="nav nav-head clearfix">
 
             <% if (!req.session.authenticated) { %>
               <div class="login-dropdown">
-                <a class="btn btn-submit login-toggle" href="#">Login</a>
+                <a class="btn btn-login login-toggle" href="#">Login <span class="icon icon-arrow-down"></span></a>
                   <div class="login-menu">
                     <form class="form-login" action="/login" method="post">
                       <div class="form-group">
@@ -43,27 +44,27 @@
                         <label for="password" class="form-label">Password</label>
                         <input type="password" id="password" class="form-control" name="password" required />
                       </div>
-                      <button class="btn btn-block" type="submit">Login</button>
+                      <button class="btn btn-submit" type="submit">Login</button>
                     </form>
                   </div>
                 </div>
               <% } else { %>
-                <a class="btn btn-submit" href="/logout">Logout</a>
+                <a class="btn btn-logout" href="/logout">Logout</a>
               <% } %>
 
             </div>
         </div>
-
       </div>
 
     <div class="main clearfix">
-      <% ['error', 'success'].forEach(function(type) { %>
-        <% req.flash(type).forEach(function(msg) { %>
-          <div class="alert alert-<%= type === 'error' ? 'error' : 'success' %>">
-            <p><%= msg %></p>
-          </div>
+        <% ['error', 'success'].forEach(function(type) { %>
+          <% req.flash(type).forEach(function(msg) { %>
+            <div class="alert alert-<%= type === 'error' ? 'error' : 'success' %>">
+              <button type="button" class="close-alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+              <%= msg %>
+            </div>
+          <% }) %>
         <% }) %>
-      <% }) %>
 
       <%- body %>
 

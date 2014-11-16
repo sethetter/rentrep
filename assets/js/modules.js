@@ -45,6 +45,10 @@ $(function(){
 	};
 	mobilelogin.init();
 
+	$('.close-alert').on('click', function(){
+		$(this).parent().fadeOut(300);
+	});
+
 	$(document).on('keydown paste focus click', '.form-control', function () {
 		$(this).parent('.form-group').addClass('filled');
 	});

@@ -9,7 +9,8 @@ html {
 }
 body {
     font-size: 16px;
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
     background: #fff;
     color: #222;
     line-height: 1.6;
@@ -53,7 +54,6 @@ p, ul {
 
 /* Alerts */
 .alert {
-    margin-bottom: 1em;
     padding: .4em .8em;
     position: relative;
 }
@@ -63,6 +63,24 @@ p, ul {
 .alert-error {
     background: #b8b8b8;
 }
+.close-alert {
+    position: relative;
+    top: 0;
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+}
+
 
 /* Navigation */
 .nav-toggle {
@@ -126,6 +144,8 @@ p, ul {
 .logo-head {
     margin: 0;
     font-size: 0;
+    display: inline-block;
+    margin-top: 10px;
 }
 .nav-head.close {
     border: 0;
@@ -144,9 +164,12 @@ p, ul {
     left: 0;
     z-index: 50;
     background: #fff;
+    height: 93px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,.3);
+    text-align: center;
 }
 .main {
-    padding-top: 48px;
+    padding-top: 93px;
     width: 100%;
     position: relative;
 }
@@ -156,11 +179,16 @@ p, ul {
     position: fixed;
     width: 300px;
     height: 100%;
-    background-color: #e8e8e8;
+    background-color: #d6e6e6;
     overflow: auto;
 }
 .main-left-inner {
     padding: 1em;
+}
+.profile-head {
+    text-align: center;
+    margin-bottom: 1em;
+    border-bottom: 2px solid #636363;
 }
 .profile-image {
     width: 150px;
@@ -168,6 +196,19 @@ p, ul {
     display: block;
     margin: 0 auto 1em auto;
     border-radius: 50%;
+}
+.profile-title {
+    font-size: 26px;
+    color: #636363;
+    margin-bottom: 16px;
+}
+
+.main-left-nav {
+    border-top: 1px solid #636363;
+    border-bottom: 1px solid #636363;
+}
+.main-left-menu {
+    
 }
 
 .main-right {
@@ -193,18 +234,10 @@ p, ul {
     padding: 1em;
 }
 
-
-.form-home {
-    position: fixed;
-    left: 30%;
-    top: 40%;
-    width: 40%;
-}
-
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: .4em .8em;
+    padding: .25em .8em;
     margin-bottom: 0;
     font-weight: 400;
     text-align: center;
@@ -217,12 +250,36 @@ p, ul {
     user-select: none;
     background-image: none;
     border: 1px solid transparent;
-    border-radius: 4px;
-    background-color: #e8e8e;
+    border-radius: 8px;
+    color: #fff;
+    background-color: #f1623e;
 }
 .btn-block {
     display: block;
     width: 100%;
+}
+.btn-login,
+.btn-logout {
+    position: relative;
+    height: 93px;
+    font-size: 28px;
+    font-weight: 300;
+    color: #f1623e;
+    background: transparent;
+}
+.btn-login .icon {
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    margin-left: -15px;
+}
+.btn-logout {
+    line-height: 84px;
+}
+.btn-go {
+    background-image: url(../images/sprites/btn-go.png);
+    width: 51px;
+    height: 41px;
 }
 
 /* Text */
@@ -244,10 +301,10 @@ p, ul {
     position: relative;
 }
 .form-login .form-group {
-    margin-bottom: 2px;
+    margin-bottom: 8px;
 }
 .form-label {
-    line-height: 1;
+    line-height: 1.2;
     display: block;
     position: absolute;
     top: .5em;
@@ -261,11 +318,13 @@ p, ul {
 }
 .form-control {
     display: block;
+    font-size: 20px;
     width: 100%;
     background: #fff;
-    padding: .5em;
+    padding: .25em .5em;
     outline: 0;
-    border: 1px solid #b8b8b8;
+    border: 0;
+    border-radius: 8px;
     box-shadow: inset 0px 1px 4px rgba(0,0,0,0.1), 0px 0px 0px 7px rgba(204,204,204,0);
     -webkit-transition: border 0.3s, box-shadow 0.3s;
     -transition: border 0.3s, box-shadow 0.3s;
@@ -278,11 +337,12 @@ p, ul {
     position: absolute;
     top: 100%;
     right: 0;
-    padding: 1em;
+    padding: 1.5em 1em 1em 1em;
     background: #e8e8e8;
-    z-index: 500;
-    min-width: 180px;
+    z-index: -1;
+    min-width: 280px;
     display: none;
+    text-align: left;
 }
 .login-link {
     line-height: 1.1;
@@ -290,10 +350,6 @@ p, ul {
 .open .login-menu {
     display: block;
 }
-.open .login-toggle {
-    background: #e8e8e8;
-}
-
 /* Tables */
 .table-container {
     max-width: 100%;
@@ -327,10 +383,16 @@ p, ul {
     position: relative;
 }
 .icon-logo {
-    background-image: url(../images/sprites/icon-logo.gif);
-    width: 48px;
-    height: 48px;
+    background-image: url(../images/sprites/icon-logo.png);
+    width: 253px;
+    height: 72px;
 }
+.icon-arrow-down {
+    background-image: url(../images/sprites/icon-arrow-down.png);
+    width: 30px;
+    height: 37px;
+}
+
 .hidden {
     display: none !important;
     visibility: hidden;
@@ -436,9 +498,6 @@ p, ul {
         position: static;
         width: auto;
     }
-    .logo-head {
-        float: left;
-    }
     .nav-head {
         float: right;
     }
@@ -472,25 +531,42 @@ p, ul {
     left: 0;
     padding: 0;
     z-index: -1;
+    padding-top: 93px;
+    text-align: center;
+    color: #fff;
+    background-size: contain;
+}
+.home-title {
+    font-size: 80px;
+    opacity: .5;
+    margin-top: 96px;
+    margin-bottom: 36px;
+}
+.home-window ul {
+    text-align: left;
+}
+.home-window-left {
+    background: #8cbd44;
+    background-image: url(../images/background-tenant.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
 }
 .home-window-right {
+    background: #7f8e8e;
     left: 50%;
-}
-.background-tenant {
-    width: 100%;
-    height: 100%;
-    background-image: url(../images/background-tenant.jpg);
-    background-position: 50% 50%;
-    background-size: cover;
-}
-.background-landlord {
-    width: 100%;
-    height: 100%;
     background-image: url(../images/background-landlord.jpg);
-    background-position: 50% 50%;
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
 }
-
+.home-window-content {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 20px;
+}
+.home-window-content a {
+    color: #fff;
+    font-size: 35px;
+}
 @media print,
        (-o-min-device-pixel-ratio: 5/4),
        (-webkit-min-device-pixel-ratio: 1.25),
@@ -499,6 +575,14 @@ p, ul {
     .icon-logo {
         background-image: url(../images/sprites/icon-logo@2x.gif);
         background-size: 48px 48px;
+    }
+    .icon-arrow-down {
+        background-image: url(../images/sprites/icon-arrow-down@2x.png);
+        background-size: 60px 74px;
+    }
+    .btn-go {
+        background-image: url(../images/sprites/btn-go.png);
+        background-size: 51px 41px;
     }
 }
 
