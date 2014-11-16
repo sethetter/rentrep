@@ -30,6 +30,8 @@ module.exports = {
 
       return res.redirect('/tenant/home');
     });
-  }
+  },
+
+  // TODO: approve, deny
 };
 
