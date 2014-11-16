@@ -9,12 +9,26 @@
 		</div>
 	</div>
 	<div class="profile-body">
+		<div>
+			<table class="chart-line">
+				<thead>
+					<th>6 mo</th>
+					<th>12 mo</th>
+					<th>current</th>
+				</thead>
+				<tbody>
+					<td>3.5</td>
+					<td>2</td>
+					<td>4</td>
+				</tbody>
+			</table>
+		</div>
 		<div class="profile-rating">
 			<span class="icon icon-rate icon-rate-on">1</span>
 			<span class="icon icon-rate icon-rate-on">2</span>
 			<span class="icon icon-rate icon-rate-on">3</span>
-			<span class="icon icon-rate icon-rate-off">x</span>
-			<span class="icon icon-rate icon-rate-off">x</span>
+			<span class="icon icon-rate icon-rate-on">4</span>
+			<span class="icon icon-rate icon-rate-off"></span>
 		</div>
 		<div class="nav-main-left">
 			<ul class="menu-main-left menu">
@@ -25,3 +39,6 @@
 		<a href="/property/new" class="btn btn-block btn-orange">Add a New Property</a>
 	</div>
 </div>
+
+<script src="/js/vendor/jquery.visualize.js"></script>
+<script>$(function(){$('table.chart-line').hide().visualize({type: 'line', height: '100px', width: '268px'});});</script>
