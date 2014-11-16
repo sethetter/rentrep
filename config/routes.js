@@ -48,10 +48,10 @@ module.exports.routes = {
   'get /logout': 'SessionController.logout',
 
   // Tenant routes
-  'get /tenant/home': { view: 'tenant/home' },
+  'get /tenant/home': 'TenantController.home',
 
   // Landlord routes
-  'get /landlord/home': { view: 'landlord/home' },
+  'get /landlord/home': 'LandlordController.home',
 
   // Property routes
   'get /property/new': 'PropertyController.new',
